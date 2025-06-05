@@ -1,8 +1,8 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { TrendingUp, Users, Globe, Settings, BarChart } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Services = () => {
   const services = [
@@ -190,6 +190,8 @@ const Services = () => {
           </Button>
         </div>
       </section>
+
+      <ScrollToTop />
     </div>
   );
 };

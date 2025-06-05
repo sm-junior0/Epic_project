@@ -1,8 +1,8 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const FAQ = () => {
   const faqs = [
@@ -145,8 +145,10 @@ const FAQ = () => {
           </Button>
         </div>
       </section>
+
+      <ScrollToTop />
     </div>
-  );
+  );    
 };
 
 export default FAQ;

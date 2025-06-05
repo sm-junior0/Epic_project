@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -216,6 +216,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      <ScrollToTop />
     </div>
   );
 };

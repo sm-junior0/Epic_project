@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/partners" element={<Partners />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

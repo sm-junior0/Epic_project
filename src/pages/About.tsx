@@ -1,6 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Target, Users, Award, MapPin, Mail, Linkedin } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
+import Sangwa from '../assets/team/Sangwa.png'
+import fils from '../assets/team/fils.png'
+import kevin from '../assets/team/Kevin.png'
 
 const About = () => {
   const values = [
@@ -28,23 +31,23 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Sarah Uwimana",
-      role: "Founder & CEO",
-      image: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+      name: "Sangwa Deus Dedit",
+      role: "Project Manager",
+      image: Sangwa,
       bio: "Career development expert with 10+ years in education and data analytics",
       location: "Kigali, Rwanda"
     },
     {
-      name: "James Mugisha",
-      role: "Head of Data Analytics",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+      name: "Kevin",
+      role: "Marketing Manager",
+      image: kevin,
       bio: "Specialized in labor market analysis and career trend forecasting",
       location: "Kigali, Rwanda"
     },
     {
-      name: "Grace Nyirahabimana",
-      role: "Student Success Manager",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+      name: "fils serugendo",
+      role: "Sales Manager",
+      image: fils,
       bio: "Passionate about guiding students through their career journey",
       location: "Kigali, Rwanda"
     },

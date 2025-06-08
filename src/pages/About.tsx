@@ -5,6 +5,14 @@ import Sangwa from '../assets/team/Sangwa.png'
 import fils from '../assets/team/fils.png'
 import kevin from '../assets/team/Kevin.png'
 
+// Import gallery images
+import img01 from "@/assets/gallery/01.jpg";
+import img02 from "@/assets/gallery/02.jpg";
+import img03 from "@/assets/gallery/03.jpg";
+import img04 from "@/assets/gallery/04.jpg";
+import img05 from "@/assets/gallery/05.jpg";
+import img06 from "@/assets/gallery/06.jpg";
+
 const About = () => {
   const values = [
     {
@@ -63,33 +71,33 @@ const About = () => {
   const galleryItems = [
     {
       type: "image",
-      src: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1",
-      alt: "Career planning session"
+      src: img01,
+      alt: "Career Development Workshop"
     },
     {
       type: "image",
-      src: "https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1",
-      alt: "Data analysis workshop"
+      src: img02,
+      alt: "Professional Networking Session"
     },
     {
       type: "image",
-      src: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1",
-      alt: "Student mentoring"
+      src: img03,
+      alt: "Skills Development Training"
     },
     {
       type: "image",
-      src: "https://images.pexels.com/photos/3182796/pexels-photo-3182796.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1",
-      alt: "Career guidance meeting"
+      src: img04,
+      alt: "Team Building Activities"
     },
     {
       type: "image",
-      src: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1",
-      alt: "Team collaboration"
+      src: img05,
+      alt: "Leadership Development"
     },
     {
       type: "image",
-      src: "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1",
-      alt: "Professional development"
+      src: img06,
+      alt: "Career Planning Session"
     }
   ];
 

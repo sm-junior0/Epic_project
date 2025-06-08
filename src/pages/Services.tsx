@@ -1,199 +1,140 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, TrendingUp, Users, Target, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
-import { TrendingUp, Users, Globe, Settings, BarChart } from "lucide-react";
-import ScrollToTop from "@/components/ScrollToTop";
+import AnimatedSection from "@/components/AnimatedSection";
 
-const Services = () => {
-  const services = [
-    {
-      icon: TrendingUp,
-      title: "Career Trend Identification",
-      description: "Stay ahead of the curve with comprehensive job market analysis",
-      features: [
-        "Real-time job market data analysis",
-        "Emerging industry trend reports", 
-        "Skills demand forecasting",
-        "Salary trend analysis",
-        "Geographic opportunity mapping"
-      ]
-    },
-    {
-      icon: Users,
-      title: "Student Preference Analytics",
-      description: "Discover career paths that align with your unique profile",
-      features: [
-        "Comprehensive interest assessment",
-        "Skills and strengths analysis",
-        "Personality-career matching",
-        "Academic performance correlation",
-        "Personalized career recommendations"
-      ]
-    },
-    {
-      icon: Globe,
-      title: "Study Abroad Program Design",
-      description: "Tailored international education pathways",
-      features: [
-        "University program matching",
-        "Scholarship opportunity identification",
-        "Application strategy development",
-        "Country-specific guidance",
-        "Career outcome projections"
-      ]
-    },
-    {
-      icon: Settings,
-      title: "Operational Optimization",
-      description: "Streamline your career planning process",
-      features: [
-        "Goal setting and timeline creation",
-        "Resource allocation planning",
-        "Progress tracking systems",
-        "Decision-making frameworks",
-        "Process efficiency analysis"
-      ]
-    },
-    {
-      icon: BarChart,
-      title: "Performance Tracking",
-      description: "Measure and optimize your career development journey",
-      features: [
-        "Progress milestone tracking",
-        "Success metrics analysis",
-        "Placement rate monitoring",
-        "Career satisfaction assessment",
-        "ROI analysis on education investments"
-      ]
-    }
-  ];
-
+const Services: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white py-20 overflow-hidden">
+      <AnimatedSection animationType="fade-in" className="relative bg-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Professional services and consulting"
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Team collaboration and planning"
             className="w-full h-full object-cover opacity-10"
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our 
-              <span className="text-blue-600">
-                {" "}Services
-              </span>
+              Our Services
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive, data-driven career guidance services designed to transform 
-              your interests and performance into actionable career strategies.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Comprehensive career guidance services designed to help you make informed decisions about your future.
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Services Grid */}
-      <section className="py-16">
+      {/* Main Services */}
+      <AnimatedSection animationType="slide-up" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
-                        <CardDescription className="text-lg">{service.description}</CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg hover:scale-105 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to={service.link}>Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Process Section */}
-      <section className="py-16 bg-gray-50">
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Process: Define, Deepen, Strengthen</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Process</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our structured approach ensures comprehensive career development through three key phases.
+              A structured approach to help you discover and pursue your ideal career path.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                1
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {process.map((step, index) => (
+              <div key={index} className="relative">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                    {index + 1}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+                {index < process.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-blue-600 -ml-4"></div>
+                )}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Define</h3>
-              <p className="text-gray-600">
-                Identify your interests, strengths, and career aspirations through comprehensive assessment 
-                and market analysis.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                2
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Deepen</h3>
-              <p className="text-gray-600">
-                Develop detailed understanding of chosen career paths, required skills, and strategic 
-                educational planning.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                3
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Strengthen</h3>
-              <p className="text-gray-600">
-                Implement your career plan with ongoing support, performance tracking, and strategic 
-                adjustments.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600">
+      <AnimatedSection animationType="scale-in" className="py-16 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Career Journey?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let's work together to create a career plan that's both personally fulfilling and strategically sound.
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Take the first step towards your dream career with EPIC's comprehensive guidance services.
           </p>
-          <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-            <Link to="/contact">Get Started Today</Link>
+          <Button asChild className="bg-white text-blue-600 hover:bg-blue-50">
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
-      </section>
-
-      <ScrollToTop />
+      </AnimatedSection>
     </div>
   );
 };
+
+const services = [
+  {
+    icon: TrendingUp,
+    title: "Career Trend Analysis",
+    description: "Data-driven insights into emerging job markets and career opportunities",
+    link: "/services#trends"
+  },
+  {
+    icon: Users,
+    title: "Student Preference Analytics",
+    description: "Personalized career recommendations based on your interests and strengths",
+    link: "/services#analytics"
+  },
+  {
+    icon: Target,
+    title: "Study Abroad Programs",
+    description: "Tailored international education pathways using market trends",
+    link: "/services#abroad"
+  },
+  {
+    icon: Globe,
+    title: "Performance Tracking",
+    description: "Measure your progress and success throughout your career journey",
+    link: "/services#tracking"
+  }
+];
+
+const process = [
+  {
+    title: "Initial Assessment",
+    description: "We evaluate your interests, strengths, and career goals through comprehensive assessments."
+  },
+  {
+    title: "Personalized Planning",
+    description: "Develop a customized career roadmap based on your unique profile and market opportunities."
+  },
+  {
+    title: "Ongoing Support",
+    description: "Receive continuous guidance and resources to help you achieve your career objectives."
+  }
+];
 
 export default Services;

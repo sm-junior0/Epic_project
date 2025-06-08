@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Filter, Image, Video, Calendar } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import ScrollToTop from "@/components/ScrollToTop";
+import AnimatedSection from "@/components/AnimatedSection";
 
 // Import all gallery images
 import img01 from "@/assets/gallery/01.jpg";
@@ -36,7 +37,7 @@ interface MediaItem {
   tags: string[];
 }
 
-const Gallery = () => {
+const Gallery: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState<'all' | 'image' | 'video'>('all');
   const [sortBy, setSortBy] = useState<'date' | 'title'>('date');
@@ -216,7 +217,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white py-20 overflow-hidden">
+      <AnimatedSection animationType="fade-in" className="relative bg-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -238,10 +239,10 @@ const Gallery = () => {
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Filter and Search Section */}
-      <section className="py-8 bg-gray-50">
+      <AnimatedSection animationType="slide-up" className="py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Search Input */}
@@ -291,10 +292,10 @@ const Gallery = () => {
             Showing {filteredItems.length} of {mediaItems.length} items
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Gallery Grid */}
-      <section className="py-16">
+      <AnimatedSection animationType="slide-in-right" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredItems.length === 0 ? (
             <div className="text-center py-12">
@@ -346,7 +347,8 @@ const Gallery = () => {
             </div>
           )}
         </div>
-      </section>
+      </AnimatedSection>
+
       <ScrollToTop />
     </div>
   );

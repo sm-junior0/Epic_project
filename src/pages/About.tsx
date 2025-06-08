@@ -1,6 +1,8 @@
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Target, Users, Award, MapPin, Mail, Linkedin } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
+import AnimatedSection from "@/components/AnimatedSection";
 import Sangwa from '../assets/team/Sangwa.png'
 import fils from '../assets/team/fils.png'
 import kevin from '../assets/team/Kevin.png'
@@ -13,98 +15,85 @@ import img04 from "@/assets/gallery/04.jpg";
 import img05 from "@/assets/gallery/05.jpg";
 import img06 from "@/assets/gallery/06.jpg";
 
-const About = () => {
-  const values = [
-    {
-      icon: TrendingUp,
-      title: "Data-Driven Approach",
-      description: "We combine market insights with personal preferences to ensure your career decisions are both heartfelt and well-informed."
-    },
-    {
-      icon: Target,
-      title: "Focused Guidance",
-      description: "Our structured Define-Deepen-Strengthen methodology provides clear steps toward your career goals."
-    },
-    {
-      icon: Users,
-      title: "Personalized Support",
-      description: "Every student receives individualized attention tailored to their unique strengths and aspirations."
-    },
-    {
-      icon: Award,
-      title: "Proven Results",
-      description: "Our track record speaks for itself - students who work with us achieve their career objectives."
-    }
-  ];
+const values = [
+  {
+    title: "Data-Driven Insights",
+    description: "We combine market data with personal interests to guide your career decisions.",
+    icon: TrendingUp
+  },
+  {
+    title: "Personalized Approach",
+    description: "Every student is unique. We tailor our guidance to your specific needs and goals.",
+    icon: Target
+  },
+  {
+    title: "Expert Team",
+    description: "Our team brings together career experts, data analysts, and student success specialists.",
+    icon: Users
+  },
+  {
+    title: "Proven Results",
+    description: "Our approach has helped countless students find their ideal career paths.",
+    icon: Award
+  }
+];
 
-  const teamMembers = [
-    {
-      name: "Sangwa Deus Dedit",
-      role: "Project Manager",
-      image: Sangwa,
-      bio: "Career development expert with 10+ years in education and data analytics",
-      location: "Kigali, Rwanda"
-    },
-    {
-      name: "Kevin",
-      role: "Marketing Manager",
-      image: kevin,
-      bio: "Specialized in labor market analysis and career trend forecasting",
-      location: "Kigali, Rwanda"
-    },
-    {
-      name: "fils serugendo",
-      role: "Sales Manager",
-      image: fils,
-      bio: "Passionate about guiding students through their career journey",
-      location: "Kigali, Rwanda"
-    },
-    {
-      name: "David Nkurunziza",
-      role: "Partnership Director",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
-      bio: "Building strategic partnerships with industry leaders and educational institutions",
-      location: "Kigali, Rwanda"
-    }
-  ];
+const teamMembers = [
+  {
+    name: "Sangwa",
+    role: "Career Guidance Expert",
+    bio: "Specializing in helping students discover their true potential and align it with market opportunities.",
+    location: "Kigali, Rwanda",
+    image: Sangwa
+  },
+  {
+    name: "Fils",
+    role: "Data Analyst",
+    bio: "Expert in analyzing market trends and providing data-driven career insights.",
+    location: "Kigali, Rwanda",
+    image: fils
+  },
+  {
+    name: "Kevin",
+    role: "Student Success Specialist",
+    bio: "Dedicated to supporting students throughout their career journey with personalized guidance.",
+    location: "Kigali, Rwanda",
+    image: kevin
+  }
+];
 
-  const galleryItems = [
-    {
-      type: "image",
-      src: img01,
-      alt: "Career Development Workshop"
-    },
-    {
-      type: "image",
-      src: img02,
-      alt: "Professional Networking Session"
-    },
-    {
-      type: "image",
-      src: img03,
-      alt: "Skills Development Training"
-    },
-    {
-      type: "image",
-      src: img04,
-      alt: "Team Building Activities"
-    },
-    {
-      type: "image",
-      src: img05,
-      alt: "Leadership Development"
-    },
-    {
-      type: "image",
-      src: img06,
-      alt: "Career Planning Session"
-    }
-  ];
+const galleryItems = [
+  {
+    src: img01,
+    alt: "Career guidance session"
+  },
+  {
+    src: img02,
+    alt: "Student workshop"
+  },
+  {
+    src: img03,
+    alt: "Team collaboration"
+  },
+  {
+    src: img04,
+    alt: "Success celebration"
+  },
+  {
+    src: img05,
+    alt: "Professional development"
+  },
+  {
+    src: img06,
+    alt: "Career fair"
+  }
+];
 
+const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white py-20 overflow-hidden">
+      <AnimatedSection animationType="fade-in" className="relative bg-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -113,7 +102,7 @@ const About = () => {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
+          <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 hover:scale-105 transition-transform duration-300">
               About 
               <span className="text-blue-600">
@@ -126,13 +115,13 @@ const About = () => {
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Mission & Vision */}
-      <section className="py-16">
+      <AnimatedSection animationType="slide-up" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="animate-fade-in hover:scale-105 transition-all duration-300">
+            <div className="hover:scale-105 transition-all duration-300">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-6">
                 To give you all the tools, resources, and guidance you need to make career decisions 
@@ -145,7 +134,7 @@ const About = () => {
                 actionable career plans.
               </p>
             </div>
-            <div className="animate-fade-in hover:scale-105 transition-all duration-300">
+            <div className="hover:scale-105 transition-all duration-300">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
               <p className="text-lg text-gray-600 mb-6">
                 To be the top name in career guidance across Africa and beyond, helping everyone find 
@@ -160,12 +149,12 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* What Makes Us Different */}
-      <section className="py-16 bg-gray-50">
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">What Makes EPIC Different</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               In today's rapidly changing job market, career decisions need more than just intuition. 
@@ -176,7 +165,7 @@ const About = () => {
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in border-l-4 border-teal-600">
+                <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 border-l-4 border-teal-600">
                   <CardHeader className="text-center">
                     <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4 hover:rotate-12 transition-transform duration-300">
                       <Icon className="h-6 w-6 text-white" />
@@ -191,12 +180,12 @@ const About = () => {
             })}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Team Section */}
-      <section className="py-16 bg-white">
+      <AnimatedSection animationType="scale-in" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Our diverse team of career experts, data analysts, and student success specialists 
@@ -205,7 +194,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in group">
+              <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 group">
                 <CardHeader className="text-center pb-2">
                   <div className="relative mx-auto mb-4">
                     <img 
@@ -229,12 +218,12 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Gallery Section */}
-      <section className="py-16 bg-gray-50">
+      <AnimatedSection animationType="fade-in" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Impact in Action</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               See how EPIC Careers is transforming students' lives through data-driven career guidance 
@@ -243,7 +232,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryItems.map((item, index) => (
-              <div key={index} className="relative group animate-fade-in hover:scale-105 transition-all duration-300">
+              <div key={index} className="relative group hover:scale-105 transition-all duration-300">
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <img 
                     src={item.src} 
@@ -260,13 +249,13 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Rwanda Focus */}
-      <section className="py-16 bg-white">
+      <AnimatedSection animationType="slide-up" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
+            <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Rwanda-Based, Globally Relevant</h2>
               <p className="text-lg text-gray-600 mb-6">
                 While we're proudly based in Kigali, Rwanda, our approach and insights have global relevance. 
@@ -288,7 +277,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="relative animate-fade-in">
+            <div className="relative">
               <img 
                 src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Global connectivity and local expertise"
@@ -297,7 +286,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       <ScrollToTop />
     </div>

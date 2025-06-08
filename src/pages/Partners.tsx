@@ -1,200 +1,135 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Monitor, Film, Music, Megaphone } from "lucide-react";
-import ScrollToTop from "@/components/ScrollToTop";
+import AnimatedSection from "@/components/AnimatedSection";
 
-const Partners = () => {
+const Partners: React.FC = () => {
   const partners = [
     {
       name: "DreamizeAfrica",
-      sector: "Tech & Digital Careers",
-      icon: Monitor,
-      description: "Leading technology and digital skills training organization focused on preparing students for the digital economy.",
-      services: [
-        "Software Development Training",
-        "Digital Marketing Courses",
-        "Data Science Programs",
-        "UX/UI Design Workshops",
-        "Tech Career Mentorship"
-      ],
-      focus: "Bridging the gap between academic learning and industry-ready tech skills through hands-on projects and real-world applications."
+      focus: "Tech & Digital Careers",
+      description: "Leading technology training and career placement",
+      icon: "💻",
+      color: "bg-blue-100 text-blue-800"
     },
     {
       name: "Green Land Studio",
-      sector: "Filmmaking & Creative Media",
-      icon: Film,
-      description: "Professional filmmaking and creative content production studio offering comprehensive media training programs.",
-      services: [
-        "Film Production Training",
-        "Video Editing Masterclasses",
-        "Cinematography Workshops",
-        "Screenwriting Programs",
-        "Creative Direction Mentorship"
-      ],
-      focus: "Nurturing creative talent through professional-grade training and industry exposure in the rapidly growing African film industry."
+      focus: "Filmmaking & Creative Media",
+      description: "Professional media production and creative arts training",
+      icon: "🎬",
+      color: "bg-green-100 text-green-800"
     },
     {
       name: "Intare Sound Wave",
-      sector: "Music & Audio Production",
-      icon: Music,
-      description: "Premier music production and audio engineering center providing world-class training in sound production.",
-      services: [
-        "Music Production Training",
-        "Audio Engineering Courses",
-        "Sound Design Workshops",
-        "Recording Techniques",
-        "Music Business Education"
-      ],
-      focus: "Empowering the next generation of audio professionals with cutting-edge technology and industry-standard practices."
+      focus: "Music & Audio Production",
+      description: "Comprehensive music production and audio engineering",
+      icon: "🎵",
+      color: "bg-purple-100 text-purple-800"
     },
     {
       name: "Agura",
-      sector: "Marketing, Sales & Branding",
-      icon: Megaphone,
-      description: "Strategic marketing and brand development agency specializing in comprehensive business growth solutions.",
-      services: [
-        "Digital Marketing Strategy",
-        "Brand Development",
-        "Sales Training Programs",
-        "Market Research",
-        "Business Development Consulting"
-      ],
-      focus: "Building strategic marketing capabilities that drive business growth and create lasting brand value in competitive markets."
+      focus: "Marketing, Sales & Branding",
+      description: "Strategic marketing and brand development expertise",
+      icon: "📈",
+      color: "bg-orange-100 text-orange-800"
+    }
+  ];
+
+  const benefits = [
+    {
+      title: "Access to Resources",
+      description: "Gain access to our comprehensive career development resources and tools."
+    },
+    {
+      title: "Networking Opportunities",
+      description: "Connect with other partners and expand your professional network."
+    },
+    {
+      title: "Joint Programs",
+      description: "Collaborate on specialized programs and initiatives for career development."
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection animationType="fade-in" className="relative bg-white py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Team collaboration and planning"
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our 
-              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-                {" "}Ecosystem
-              </span>
+              Our Partners
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet our strategic partners who provide specialized training and career opportunities 
-              across diverse industries, creating a comprehensive support network for your career journey.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Strategic partnerships that enhance our ability to provide comprehensive career guidance.
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Partners Section */}
-      <section className="py-16">
+      {/* Partners Grid */}
+      <AnimatedSection animationType="slide-up" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
-            {partners.map((partner, index) => {
-              const Icon = partner.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-6">
-                      <div className="flex items-center space-x-4 mb-4 lg:mb-0">
-                        <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className="h-8 w-8 text-white" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-2xl">{partner.name}</CardTitle>
-                          <CardDescription className="text-lg font-medium text-blue-600">
-                            {partner.sector}
-                          </CardDescription>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-gray-600 text-lg">{partner.description}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">Services & Programs</h4>
-                        <ul className="space-y-2">
-                          {partner.services.map((service, serviceIndex) => (
-                            <li key={serviceIndex} className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">{service}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">Focus Area</h4>
-                        <p className="text-gray-600">{partner.focus}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {partners.map((partner, index) => (
+              <Card key={index} className="hover:shadow-lg hover:scale-105 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">{partner.icon}</div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{partner.name}</h3>
+                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${partner.color} mb-4`}>
+                    {partner.focus}
+                  </div>
+                  <p className="text-gray-600">{partner.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Partnership Benefits */}
-      <section className="py-16 bg-gray-50">
+      {/* Benefits Section */}
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Our Partnership Model Works</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Partner Benefits</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our ecosystem approach ensures students receive comprehensive support across all aspects of their chosen career path.
+              Discover the advantages of partnering with EPIC for your career development needs.
             </p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-lg">1</span>
+            {benefits.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                  {index + 1}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Industry Expertise</h3>
-              <p className="text-gray-600">
-                Each partner brings deep industry knowledge and current market insights to ensure 
-                relevant, up-to-date career guidance.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-lg">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Practical Training</h3>
-              <p className="text-gray-600">
-                Students gain hands-on experience through specialized programs that prepare them 
-                for real-world career challenges.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-lg">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Network Access</h3>
-              <p className="text-gray-600">
-                Direct connections to industry professionals and potential employers create 
-                valuable networking opportunities.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-teal-600">
+      <AnimatedSection animationType="scale-in" className="py-16 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Interested in Becoming a Partner?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join our ecosystem and help shape the future of career development in Africa.
+          <h2 className="text-3xl font-bold text-white mb-4">Become a Partner</h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Join our network of partners and help shape the future of career development.
           </p>
-          <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-            <Link to="/contact">Partner With Us</Link>
+          <Button asChild className="bg-white text-blue-600 hover:bg-blue-50">
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
-      </section>
-
-      <ScrollToTop />
+      </AnimatedSection>
     </div>
   );
 };

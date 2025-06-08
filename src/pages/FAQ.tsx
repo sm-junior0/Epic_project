@@ -1,10 +1,12 @@
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
+import AnimatedSection from "@/components/AnimatedSection";
 
-const FAQ = () => {
+const FAQ: React.FC = () => {
   const faqs = [
     {
       question: "How does EPIC help students?",
@@ -74,7 +76,7 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20">
+      <AnimatedSection animationType="fade-in" className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -89,10 +91,10 @@ const FAQ = () => {
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* FAQ Categories */}
-      <section className="py-16">
+      <AnimatedSection animationType="slide-up" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {categories.map((category, index) => (
@@ -110,10 +112,10 @@ const FAQ = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* FAQ Accordion */}
-      <section className="py-16 bg-gray-50">
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
@@ -130,10 +132,10 @@ const FAQ = () => {
             ))}
           </Accordion>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Still Have Questions CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-teal-600">
+      <AnimatedSection animationType="scale-in" className="py-16 bg-gradient-to-r from-blue-600 to-teal-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Still Have Questions?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
@@ -144,7 +146,7 @@ const FAQ = () => {
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
-      </section>
+      </AnimatedSection>
 
       <ScrollToTop />
     </div>

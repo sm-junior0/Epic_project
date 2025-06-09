@@ -20,30 +20,39 @@ const Services: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Services
+              Our 
+              <span className="text-[#2E7D32]">
+                {" "}Services
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Comprehensive career guidance services designed to help you make informed decisions about your future.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive career guidance services designed to help you make informed decisions 
+              about your future.
             </p>
           </div>
         </div>
       </AnimatedSection>
 
       {/* Main Services */}
-      <AnimatedSection animationType="slide-up" className="py-16 bg-gray-50">
+      <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg hover:scale-105 transition-all duration-300">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-l-4 border-[#2E7D32]">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="h-6 w-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <Button asChild variant="outline" className="w-full">
-                    <Link to={service.link}>Learn More</Link>
-                  </Button>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-[#2E7D32] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             ))}
@@ -64,14 +73,14 @@ const Services: React.FC = () => {
             {process.map((step, index) => (
               <div key={index} className="relative">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                  <div className="w-16 h-16 bg-[#2E7D32] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                     {index + 1}
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
                 {index < process.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-blue-600 -ml-4"></div>
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-[#2E7D32] -ml-4"></div>
                 )}
               </div>
             ))}
@@ -80,13 +89,13 @@ const Services: React.FC = () => {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animationType="scale-in" className="py-16 bg-blue-600">
+      <AnimatedSection animationType="scale-in" className="py-16 bg-[#2E7D32]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Take the first step towards your dream career with EPIC's comprehensive guidance services.
           </p>
-          <Button asChild className="bg-white text-blue-600 hover:bg-blue-50">
+          <Button asChild className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
@@ -100,25 +109,29 @@ const services = [
     icon: TrendingUp,
     title: "Career Trend Analysis",
     description: "Data-driven insights into emerging job markets and career opportunities",
-    link: "/services#trends"
+    link: "/services#trends",
+    features: ["Data-driven insights", "Emerging job markets", "Career opportunities"]
   },
   {
     icon: Users,
     title: "Student Preference Analytics",
     description: "Personalized career recommendations based on your interests and strengths",
-    link: "/services#analytics"
+    link: "/services#analytics",
+    features: ["Personalized recommendations", "Interests and strengths", "Career path"]
   },
   {
     icon: Target,
     title: "Study Abroad Programs",
     description: "Tailored international education pathways using market trends",
-    link: "/services#abroad"
+    link: "/services#abroad",
+    features: ["Tailored pathways", "International education", "Market trends"]
   },
   {
     icon: Globe,
     title: "Performance Tracking",
     description: "Measure your progress and success throughout your career journey",
-    link: "/services#tracking"
+    link: "/services#tracking",
+    features: ["Progress tracking", "Career journey", "Success measurement"]
   }
 ];
 

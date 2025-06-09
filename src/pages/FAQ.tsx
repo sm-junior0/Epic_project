@@ -5,6 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Rocket, CreditCard, GraduationCap, Building2, LucideIcon } from "lucide-react";
+
+interface Category {
+  title: string;
+  description: string;
+  questions: number[];
+  icon: LucideIcon;
+}
 
 const FAQ: React.FC = () => {
   const faqs = [
@@ -50,63 +58,71 @@ const FAQ: React.FC = () => {
     }
   ];
 
-  const categories = [
+  const categories: Category[] = [
     {
       title: "Getting Started",
       description: "New to EPIC? Start here for basic information",
-      questions: [0, 9]
+      questions: [0, 9],
+      icon: Rocket
     },
     {
       title: "Services & Pricing",
       description: "Learn about our offerings and costs",
-      questions: [1, 4, 5]
+      questions: [1, 4, 5],
+      icon: CreditCard
     },
     {
       title: "Study Abroad & Education",
       description: "Questions about international education",
-      questions: [2, 6, 7]
+      questions: [2, 6, 7],
+      icon: GraduationCap
     },
     {
       title: "Partnerships & Professional Services",
       description: "For organizations and working professionals",
-      questions: [3, 8]
+      questions: [3, 8],
+      icon: Building2
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <AnimatedSection animationType="fade-in" className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection animationType="fade-in" className="relative bg-white py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="FAQ"
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Frequently Asked 
-              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="text-[#2E7D32]">
                 {" "}Questions
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find quick answers to common questions about our services, process, and how we can help 
-              you achieve your career goals.
+              Find answers to common questions about our services and career guidance.
             </p>
           </div>
         </div>
       </AnimatedSection>
 
       {/* FAQ Categories */}
-      <AnimatedSection animationType="slide-up" className="py-16">
+      <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((category, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{category.title}</CardTitle>
-                  <CardDescription>{category.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-sm text-gray-600">
-                    {category.questions.length} question{category.questions.length > 1 ? 's' : ''}
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-l-4 border-[#2E7D32]">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
+                    <category.icon className="h-6 w-6 text-white" />
                   </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{category.title}</h3>
+                  <p className="text-sm text-gray-600">{category.questions.length} questions</p>
                 </CardContent>
               </Card>
             ))}
@@ -115,34 +131,38 @@ const FAQ: React.FC = () => {
       </AnimatedSection>
 
       {/* FAQ Accordion */}
-      <AnimatedSection animationType="slide-in-right" className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Accordion type="single" collapsible className="space-y-4">
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index}>
-                <AccordionItem value={`item-${index}`} className="border-none">
-                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                    <span className="font-semibold text-gray-900">{faq.question}</span>
+              <Accordion key={index} type="single" collapsible className="w-full">
+                <AccordionItem value={`item-${index}`} className="border border-gray-200 rounded-lg">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-[#F5F5F5]">
+                    <div className="flex items-center gap-4">
+                      <div className="w-8 h-8 bg-[#2E7D32] rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-semibold">{index + 1}</span>
+                      </div>
+                      <span className="text-left font-medium text-gray-900">{faq.question}</span>
+                    </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <AccordionContent className="px-6 py-4 text-gray-600">
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
-              </Card>
+              </Accordion>
             ))}
-          </Accordion>
+          </div>
         </div>
       </AnimatedSection>
 
-      {/* Still Have Questions CTA */}
-      <AnimatedSection animationType="scale-in" className="py-16 bg-gradient-to-r from-blue-600 to-teal-600">
+      {/* CTA Section */}
+      <AnimatedSection animationType="scale-in" className="py-16 bg-[#2E7D32]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Still Have Questions?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Can't find what you're looking for? Our team is ready to provide personalized answers 
-            to your specific questions.
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Can't find what you're looking for? Contact us directly and we'll be happy to help.
           </p>
-          <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+          <Button asChild className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>

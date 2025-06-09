@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TrendingUp, Target, Users, Award, MapPin, Mail, Linkedin } from "lucide-react";
+import { TrendingUp, Target, Users, Award, MapPin, Mail, Linkedin, Eye } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimatedSection from "@/components/AnimatedSection";
 import Sangwa from '../assets/team/Sangwa.png'
 import fils from '../assets/team/fils.png'
 import kevin from '../assets/team/Kevin.png'
+import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
 
 // Import gallery images
 import img01 from "@/assets/gallery/01.jpg";
@@ -97,56 +99,126 @@ const About: React.FC = () => {
         <div className="absolute inset-0">
           <img 
             src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Team collaboration and planning"
+            alt="Team collaboration"
             className="w-full h-full object-cover opacity-10"
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 hover:scale-105 transition-transform duration-300">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               About 
-              <span className="text-blue-600">
-                {" "}EPIC Careers
+              <span className="text-[#2E7D32]">
+                {" "}EPIC
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're not just another career guidance service. We're your strategic partner 
-              in building a future that perfectly aligns with your passions and market realities.
+              Empowering students to make informed career decisions through data-driven insights and personalized guidance.
             </p>
           </div>
         </div>
       </AnimatedSection>
 
       {/* Mission & Vision */}
-      <AnimatedSection animationType="slide-up" className="py-16">
+      <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="hover:scale-105 transition-all duration-300">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                To give you all the tools, resources, and guidance you need to make career decisions 
-                you can feel confident about. We believe that when you combine personal reflection 
-                with hard data, you create a foundation for career success that's both meaningful and sustainable.
-              </p>
-              <p className="text-lg text-gray-600">
-                Through our structured Define-Deepen-Strengthen approach, we help students transform 
-                uncertainty into clarity, turning raw interests and academic performance into robust, 
-                actionable career plans.
-              </p>
-            </div>
-            <div className="hover:scale-105 transition-all duration-300">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                To be the top name in career guidance across Africa and beyond, helping everyone find 
-                work that brings them satisfaction, purpose, and stability. We envision a world where 
-                no student has to choose between following their passion and securing their future.
-              </p>
-              <p className="text-lg text-gray-600">
-                Our goal is to create an ecosystem where data-driven insights meet personalized support, 
-                ensuring that every career decision is informed, strategic, and aligned with both 
-                personal values and market opportunities.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <Card className="border-l-4 border-[#2E7D32]">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
+                  <Target className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+                <p className="text-gray-600">
+                  To revolutionize career guidance by leveraging data analytics and market insights, 
+                  helping students make informed decisions about their future paths.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-[#2E7D32]">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
+                  <Eye className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
+                <p className="text-gray-600">
+                  To become the leading platform for career guidance, connecting students with 
+                  opportunities that align with their aspirations and market demands.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Values */}
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              The core principles that guide our approach to career guidance.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
+                    <value.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
+                  <p className="text-gray-600">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Team */}
+      <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Meet the dedicated professionals behind EPIC's success.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="relative w-32 h-32 mx-auto mb-4">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="rounded-full object-cover w-full h-full"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 text-center mb-1">{member.name}</h3>
+                  <p className="text-[#2E7D32] text-center mb-4">{member.role}</p>
+                  <p className="text-gray-600 text-center">{member.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* CTA Section */}
+      <AnimatedSection animationType="scale-in" className="py-16 bg-[#2E7D32]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Join Our Mission</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Be part of our journey to transform career guidance and help students achieve their dreams.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
+              <Link to="/contact">Contact Us</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+              <Link to="/careers">View Careers</Link>
+            </Button>
           </div>
         </div>
       </AnimatedSection>
@@ -178,44 +250,6 @@ const About: React.FC = () => {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Team Section */}
-      <AnimatedSection animationType="scale-in" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our diverse team of career experts, data analysts, and student success specialists 
-              are dedicated to helping you navigate your career journey.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 group">
-                <CardHeader className="text-center pb-2">
-                  <div className="relative mx-auto mb-4">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-24 h-24 rounded-full object-cover mx-auto group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 rounded-full bg-teal-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  </div>
-                  <CardTitle className="text-lg font-semibold text-gray-900">{member.name}</CardTitle>
-                  <p className="text-sm font-medium text-teal-600">{member.role}</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600 text-sm mb-3">{member.bio}</p>
-                  <div className="flex items-center justify-center text-xs text-gray-500">
-                    <MapPin className="h-3 w-3 mr-1" />
-                    {member.location}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </AnimatedSection>

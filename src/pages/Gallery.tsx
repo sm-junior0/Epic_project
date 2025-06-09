@@ -217,7 +217,7 @@ const Gallery: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <AnimatedSection animationType="fade-in" className="relative bg-white py-20 overflow-hidden">
+      <section className="relative bg-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -229,7 +229,7 @@ const Gallery: React.FC = () => {
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Our 
-              <span className="text-blue-600">
+              <span className="text-[#2E7D32]">
                 {" "}Gallery
               </span>
             </h1>
@@ -239,33 +239,33 @@ const Gallery: React.FC = () => {
             </p>
           </div>
         </div>
-      </AnimatedSection>
+      </section>
 
       {/* Filter and Search Section */}
-      <AnimatedSection animationType="slide-up" className="py-8 bg-gray-50">
+      <section className="py-8 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Search Input */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#2E7D32] h-4 w-4" />
               <Input
                 type="text"
                 placeholder="Search by title, description, or tags..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="pl-10 border-[#2E7D32]/20 focus:border-[#2E7D32] focus:ring-[#2E7D32]"
               />
             </div>
 
             {/* Filters */}
             <div className="flex flex-wrap gap-4 items-center">
               <div className="flex items-center gap-2">
-                <Filter className="h-4 w-4 text-gray-600" />
+                <Filter className="h-4 w-4 text-[#2E7D32]" />
                 <span className="text-sm font-medium text-gray-600">Filter:</span>
               </div>
               
               <Select value={filterType} onValueChange={(value: 'all' | 'image' | 'video') => setFilterType(value)}>
-                <SelectTrigger className="w-32">
+                <SelectTrigger className="w-32 border-[#2E7D32]/20 focus:border-[#2E7D32] focus:ring-[#2E7D32]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -276,7 +276,7 @@ const Gallery: React.FC = () => {
               </Select>
 
               <Select value={sortBy} onValueChange={(value: 'date' | 'title') => setSortBy(value)}>
-                <SelectTrigger className="w-32">
+                <SelectTrigger className="w-32 border-[#2E7D32]/20 focus:border-[#2E7D32] focus:ring-[#2E7D32]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -292,54 +292,87 @@ const Gallery: React.FC = () => {
             Showing {filteredItems.length} of {mediaItems.length} items
           </div>
         </div>
-      </AnimatedSection>
+      </section>
 
       {/* Gallery Grid */}
-      <AnimatedSection animationType="slide-in-right" className="py-16">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredItems.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-500">No items found matching your search criteria.</p>
+              <div className="text-[#2E7D32] mb-4">
+                <Search className="h-12 w-12 mx-auto" />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">No results found</h3>
+              <p className="text-gray-600">Try adjusting your search or filter criteria</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-0">
-                    <div className="relative aspect-video">
-                      {item.type === 'image' ? (
-                        <img
-                          src={item.url}
-                          alt={item.title}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <video
-                          src={item.url}
-                          controls
-                          className="w-full h-full object-cover"
-                        />
-                      )}
-                      <div className="absolute top-2 right-2">
-                        <Badge variant="secondary" className="bg-white/90">
-                          {item.type === 'image' ? <Image className="h-4 w-4" /> : <Video className="h-4 w-4" />}
-                        </Badge>
-                      </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredItems.map((item, index) => (
+                <Card 
+                  key={item.id} 
+                  className="hover:shadow-lg transition-all duration-300 hover:scale-105 group animate-fade-in border-[#2E7D32]/20"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="relative">
+                    <img
+                      src={item.url}
+                      alt={item.title}
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <div className="absolute top-2 right-2">
+                      <Badge 
+                        variant={item.type === 'video' ? 'default' : 'secondary'} 
+                        className={`flex items-center gap-1 ${
+                          item.type === 'video' 
+                            ? 'bg-[#2E7D32] text-white' 
+                            : 'bg-[#2E7D32]/10 text-[#2E7D32]'
+                        }`}
+                      >
+                        {item.type === 'video' ? <Video className="h-3 w-3" /> : <Image className="h-3 w-3" />}
+                        {item.type}
+                      </Badge>
                     </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                      <p className="text-sm text-gray-600 mb-3">{item.description}</p>
-                      <div className="flex items-center text-sm text-gray-500 mb-3">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {new Date(item.date).toLocaleDateString()}
+                    {item.type === 'video' && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 bg-[#2E7D32] bg-opacity-50 rounded-full flex items-center justify-center group-hover:bg-opacity-70 transition-all">
+                          <Video className="h-6 w-6 text-white ml-1" />
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        {item.tags.map((tag, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
+                    )}
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1">{item.title}</h3>
+                    <p className="text-sm text-gray-600 mb-3 line-clamp-2">{item.description}</p>
+                    
+                    <div className="flex items-center gap-2 mb-3">
+                      <Calendar className="h-4 w-4 text-[#2E7D32]" />
+                      <span className="text-sm text-gray-500">
+                        {new Date(item.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
+                        })}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1">
+                      {item.tags.slice(0, 3).map((tag, tagIndex) => (
+                        <Badge 
+                          key={tagIndex} 
+                          variant="outline" 
+                          className="text-xs border-[#2E7D32]/20 text-[#2E7D32] hover:bg-[#2E7D32]/10"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                      {item.tags.length > 3 && (
+                        <Badge 
+                          variant="outline" 
+                          className="text-xs border-[#2E7D32]/20 text-[#2E7D32] hover:bg-[#2E7D32]/10"
+                        >
+                          +{item.tags.length - 3}
+                        </Badge>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -347,7 +380,7 @@ const Gallery: React.FC = () => {
             </div>
           )}
         </div>
-      </AnimatedSection>
+      </section>
 
       <ScrollToTop />
     </div>

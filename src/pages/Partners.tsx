@@ -79,12 +79,12 @@ const Partners: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <AnimatedSection animationType="fade-in" className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20">
+      <AnimatedSection animationType="fade-in" className="bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Our 
-              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="text-[#2E7D32]">
                 {" "}Ecosystem
               </span>
             </h1>
@@ -103,7 +103,7 @@ const Partners: React.FC = () => {
             {partners.map((partner, index) => {
               const Icon = partner.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} className="hover:shadow-lg transition-shadow border-l-4 border-[#2E7D32]">
                   <CardHeader>
                     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-6">
                       <div className="flex items-center space-x-4 mb-4 lg:mb-0">
@@ -116,7 +116,7 @@ const Partners: React.FC = () => {
                         </div>
                         <div>
                           <CardTitle className="text-2xl">{partner.name}</CardTitle>
-                          <CardDescription className="text-lg font-medium text-blue-600">
+                          <CardDescription className="text-lg font-medium text-[#2E7D32]">
                             {partner.sector}
                           </CardDescription>
                         </div>
@@ -131,7 +131,7 @@ const Partners: React.FC = () => {
                         <ul className="space-y-2">
                           {partner.services.map((service, serviceIndex) => (
                             <li key={serviceIndex} className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-[#2E7D32] rounded-full flex-shrink-0"></div>
                               <span className="text-gray-600">{service}</span>
                             </li>
                           ))}
@@ -151,7 +151,7 @@ const Partners: React.FC = () => {
       </AnimatedSection>
 
       {/* Partnership Benefits */}
-      <AnimatedSection animationType="slide-in-right" className="py-16 bg-gray-50">
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Our Partnership Model Works</h2>
@@ -162,7 +162,7 @@ const Partners: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-lg">1</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Industry Expertise</h3>
@@ -173,7 +173,7 @@ const Partners: React.FC = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-lg">2</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Practical Training</h3>
@@ -184,7 +184,7 @@ const Partners: React.FC = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-lg">3</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Network Access</h3>
@@ -198,13 +198,13 @@ const Partners: React.FC = () => {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animationType="scale-in" className="py-16 bg-gradient-to-r from-blue-600 to-teal-600">
+      <AnimatedSection animationType="scale-in" className="py-16 bg-[#2E7D32]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Interested in Becoming a Partner?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Join our ecosystem and help shape the future of career development in Africa.
           </p>
-          <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+          <Button asChild size="lg" variant="secondary" className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
             <Link to="/contact">Partner With Us</Link>
           </Button>
         </div>

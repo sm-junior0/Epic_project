@@ -5,6 +5,13 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
 
+interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+  image: string;
+}
+
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
@@ -13,26 +20,24 @@ const Index: React.FC = () => {
         <div className="absolute inset-0">
           <img 
             src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Team collaboration and planning"
+            alt="Hero"
             className="w-full h-full object-cover opacity-10"
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 hover:scale-105 transition-transform duration-300">
-              Welcome to 
-              <span className="text-blue-600">
-                {" "}EPIC Careers
-              </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Transform Your Career with 
+              <span className="text-[#2E7D32]"> EPIC</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Your strategic partner in building a future that perfectly aligns with your passions and market realities.
+              Data-driven career guidance and personalized pathways to success.
             </p>
-            <div className="flex justify-center gap-4">
-              <Button asChild className="bg-blue-600 hover:bg-blue-700">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
                 <Link to="/services">Explore Services</Link>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild size="lg" variant="outline" className="border-[#2E7D32] text-[#2E7D32] hover:bg-[#F5F5F5]">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -41,22 +46,25 @@ const Index: React.FC = () => {
       </AnimatedSection>
 
       {/* Features Section */}
-      <AnimatedSection animationType="slide-up" className="py-16 bg-gray-50">
+      <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose EPIC?</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We combine data-driven insights with personalized guidance to help you make informed career decisions.
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Choose 
+              <span className="text-[#2E7D32]"> EPIC</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our comprehensive approach to career guidance sets us apart.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="hover:shadow-lg hover:scale-105 transition-all duration-300">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-l-4 border-[#2E7D32]">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                    <feature.icon className="h-6 w-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
+                    <feature.icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </CardContent>
               </Card>
@@ -69,23 +77,28 @@ const Index: React.FC = () => {
       <AnimatedSection animationType="slide-in-right" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our proven process helps you discover and pursue your ideal career path.
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              How It 
+              <span className="text-[#2E7D32]"> Works</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A simple, effective process to guide your career journey.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </div>
+                <Card className="hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="w-12 h-12 bg-[#2E7D32] rounded-full flex items-center justify-center mb-4">
+                      <span className="text-white font-semibold">{index + 1}</span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-gray-600">{step.description}</p>
+                  </CardContent>
+                </Card>
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-blue-600 -ml-4"></div>
+                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-[#2E7D32]" />
                 )}
               </div>
             ))}
@@ -94,30 +107,31 @@ const Index: React.FC = () => {
       </AnimatedSection>
 
       {/* Testimonials */}
-      <AnimatedSection animationType="fade-in" className="py-16 bg-gray-50">
+      <AnimatedSection animationType="scale-in" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Hear from students who have transformed their career paths with EPIC.
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Success 
+              <span className="text-[#2E7D32]"> Stories</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Hear from students who have transformed their careers with EPIC.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg hover:scale-105 transition-all duration-300">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <div className="w-12 h-12 bg-[#2E7D32] rounded-full flex items-center justify-center">
+                      <span className="text-white font-semibold">{testimonial.name[0]}</span>
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
                       <p className="text-sm text-gray-600">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-600">{testimonial.content}</p>
+                  <p className="text-gray-600 italic">"{testimonial.quote}"</p>
                 </CardContent>
               </Card>
             ))}
@@ -126,13 +140,13 @@ const Index: React.FC = () => {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animationType="scale-in" className="py-16 bg-blue-600">
+      <AnimatedSection animationType="fade-in" className="py-16 bg-[#2E7D32]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Career Journey?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Join EPIC today and take the first step towards a fulfilling career that aligns with your passions.
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Journey?</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Join EPIC today and take the first step towards a successful career.
           </p>
-          <Button asChild className="bg-white text-blue-600 hover:bg-blue-50">
+          <Button asChild size="lg" className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
             <Link to="/contact">Get Started</Link>
           </Button>
         </div>
@@ -174,24 +188,24 @@ const steps = [
   }
 ];
 
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
     name: "John Doe",
     role: "Computer Science Student",
-    content: "EPIC helped me discover my passion for AI and guided me towards the right career path.",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1"
+    quote: "EPIC helped me discover my passion for AI and guided me towards the right career path.",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
   },
   {
     name: "Jane Smith",
     role: "Business Graduate",
-    content: "The personalized guidance I received was invaluable in launching my career in marketing.",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1"
+    quote: "The personalized guidance and data-driven insights were invaluable in my career journey.",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
   },
   {
     name: "Mike Johnson",
     role: "Engineering Student",
-    content: "Thanks to EPIC, I found the perfect internship that led to my dream job.",
-    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1"
+    quote: "Thanks to EPIC, I found the perfect internship that aligned with my career goals.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
   }
 ];
 

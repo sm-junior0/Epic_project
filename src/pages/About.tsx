@@ -42,26 +42,27 @@ const values = [
 
 const teamMembers = [
   {
-    name: "Sangwa",
-    role: "Career Guidance Expert",
-    bio: "Specializing in helping students discover their true potential and align it with market opportunities.",
+    name: "Sangwa Deus Dedit",
+    role: "Project Manager",
+    bio: "Experienced in leading education-focused projects that bridge student potential with real-world opportunities through strategic planning and coordination.",
     location: "Kigali, Rwanda",
     image: Sangwa
   },
   {
-    name: "Fils",
-    role: "Data Analyst",
-    bio: "Expert in analyzing market trends and providing data-driven career insights.",
+    name: "Fils Serugendo",
+    role: "Sales Manager",
+    bio: "Specializes in identifying student needs and connecting them with the right career resources by leveraging sales strategies and market intelligence.",
     location: "Kigali, Rwanda",
     image: fils
   },
   {
     name: "Kevin",
-    role: "Student Success Specialist",
-    bio: "Dedicated to supporting students throughout their career journey with personalized guidance.",
+    role: "Marketing Manager",
+    bio: "Expert in crafting impactful campaigns that engage students and promote career development programs through effective storytelling and digital outreach.",
     location: "Kigali, Rwanda",
     image: kevin
   }
+  
 ];
 
 const galleryItems = [
@@ -224,7 +225,7 @@ const About: React.FC = () => {
       </AnimatedSection>
 
       {/* What Makes Us Different */}
-      <AnimatedSection animationType="slide-in-right" className="py-16 bg-gray-50">
+      <AnimatedSection animationType="slide-in-right" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">What Makes EPIC Different</h2>
@@ -237,12 +238,12 @@ const About: React.FC = () => {
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 border-l-4 border-teal-600">
+                <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 border-l-4 border-[#2E7D32]">
                   <CardHeader className="text-center">
-                    <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4 hover:rotate-12 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto mb-4 hover:rotate-12 transition-transform duration-300">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
-                    <CardTitle className="text-lg">{value.title}</CardTitle>
+                    <CardTitle className="text-lg text-gray-900">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 text-center">{value.description}</p>

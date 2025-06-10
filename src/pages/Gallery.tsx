@@ -23,7 +23,7 @@ import img11 from "@/assets/gallery/11.jpg";
 import img12 from "@/assets/gallery/12.jpg";
 import img13 from "@/assets/gallery/13.jpg";
 import img14 from "@/assets/gallery/14.jpg";
-import img15 from "@/assets/gallery/15.jpg";
+import img15 from "@/assets/gallery/15.jpeg";
 import img16 from "@/assets/gallery/16.jpg";
 import img17 from "@/assets/gallery/17.jpg";
 import img18 from "@/assets/gallery/18.jpg";
@@ -33,6 +33,10 @@ import img21 from "@/assets/gallery/21.jpg";
 import img22 from "@/assets/gallery/22.jpg";
 import img23 from "@/assets/gallery/23.jpg";
 import img24 from "@/assets/gallery/24.jpg";
+import img25 from "@/assets/gallery/25.jpg";
+import img26 from "@/assets/gallery/26.jpg";
+import img27 from "@/assets/gallery/27.jpg";
+import img28 from "@/assets/gallery/28.jpeg"
 import videoULK from "@/assets/gallery/ULK.mp4";
 
 interface MediaItem {
@@ -267,15 +271,42 @@ const Gallery: React.FC = () => {
       date: '2023-12-05',
       tags: ['professional', 'network', 'connections', 'growth']
     },
-    // {
-    //   id: 25,
-    //   type: 'video',
-    //   url: videoULK,
-    //   title: 'ULK Success Story',
-    //   description: 'Video showcasing ULK success story and achievements',
-    //   date: '2023-12-01',
-    //   tags: ['video', 'success', 'story', 'achievements']
-    // }
+    {
+      id: 25,
+      type: 'image',
+      url: img25,
+      title: 'Career Workshop',
+      description: 'Interactive career development workshop',
+      date: '2023-11-30',
+      tags: ['career', 'workshop', 'development', 'interactive']
+    },
+    {
+      id: 26,
+      type: 'image',
+      url: img26,
+      title: 'Student Engagement',
+      description: 'Active student participation in career activities',
+      date: '2023-11-25',
+      tags: ['student', 'engagement', 'participation', 'activities']
+    },
+    {
+      id: 27,
+      type: 'image',
+      url: img27,
+      title: 'Professional Development',
+      description: 'Continuous learning and skill enhancement',
+      date: '2023-11-20',
+      tags: ['professional', 'development', 'learning', 'skills']
+    },
+    {
+      id: 28,
+      type: 'image',
+      url: img28,
+      title: 'Professional Development',
+      description: 'Continuous learning and skill enhancement',
+      date: '2023-11-20',
+      tags: ['professional', 'development', 'learning', 'skills']
+    }
   ];
 
   const filteredItems = mediaItems

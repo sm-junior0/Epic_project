@@ -3,9 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Target, Users, Award, MapPin, Mail, Linkedin, Eye } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimatedSection from "@/components/AnimatedSection";
-import Sangwa from '../assets/team/Sangwa.png'
-import fils from '../assets/team/fils.png'
-import kevin from '../assets/team/Kevin.png'
+import Sangwa from '../assets/team/Sangwa.jpeg'
+import fils from '../assets/team/fils.jpeg'
+import kevin from '../assets/team/Kevin.jpeg'
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
@@ -189,12 +189,15 @@ const About: React.FC = () => {
             {teamMembers.map((member, index) => (
               <Card key={index} className="hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="relative w-32 h-32 mx-auto mb-4">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="rounded-full object-cover w-full h-full"
-                    />
+                  <div className="relative w-48 h-48 mx-auto mb-6">
+                    <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-[#2E7D32]/10 shadow-lg">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-300"
+                        loading="eager"
+                      />
+                    </div>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 text-center mb-1">{member.name}</h3>
                   <p className="text-[#2E7D32] text-center mb-4">{member.role}</p>
@@ -287,23 +290,25 @@ const About: React.FC = () => {
       </AnimatedSection>
 
       {/* Rwanda Focus */}
-      <AnimatedSection animationType="slide-up" className="py-16 bg-white">
+      <AnimatedSection animationType="slide-up" className="py-24 bg-gradient-to-b from-white to-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Rwanda-Based, Globally Relevant</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                While we're proudly based in Kigali, Rwanda, our approach and insights have global relevance. 
-                We understand the unique challenges and opportunities within the East African context, while 
-                staying connected to international trends and best practices.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Our local expertise combined with global perspective allows us to offer career guidance that's 
-                both culturally relevant and internationally competitive. Whether you're planning to build your 
-                career locally or exploring opportunities abroad, we provide the insights you need.
-              </p>
-              <div className="bg-blue-50 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Data-Driven Career Decisions Matter Today</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Rwanda-Based, Globally Relevant</h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  While we're proudly based in Kigali, Rwanda, our approach and insights have global relevance. 
+                  We understand the unique challenges and opportunities within the East African context, while 
+                  staying connected to international trends and best practices.
+                </p>
+                <p className="text-lg text-gray-600 mb-6">
+                  Our local expertise combined with global perspective allows us to offer career guidance that's 
+                  both culturally relevant and internationally competitive. Whether you're planning to build your 
+                  career locally or exploring opportunities abroad, we provide the insights you need.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-8 shadow-lg border border-[#2E7D32]/10 hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-semibold text-[#2E7D32] mb-4">Why Data-Driven Career Decisions Matter Today</h3>
                 <p className="text-gray-600">
                   The job market is evolving faster than ever. Skills that were in demand five years ago may be 
                   obsolete today, while entirely new career paths are emerging. Without access to current market 
@@ -313,15 +318,21 @@ const About: React.FC = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Global connectivity and local expertise"
-                className="rounded-lg shadow-lg w-full h-auto hover:scale-105 transition-transform duration-300"
-              />
+              <div className="relative rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img 
+                  src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="Global connectivity and local expertise"
+                  className="w-full h-auto hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2E7D32]/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
             </div>
           </div>
         </div>
       </AnimatedSection>
+
+      {/* Bottom Spacer */}
+      <div className="h-24 bg-[#F5F5F5]"></div>
 
       <ScrollToTop />
     </div>

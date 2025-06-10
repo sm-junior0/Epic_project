@@ -25,6 +25,14 @@ import img13 from "@/assets/gallery/13.jpg";
 import img14 from "@/assets/gallery/14.jpg";
 import img15 from "@/assets/gallery/15.jpg";
 import img16 from "@/assets/gallery/16.jpg";
+import img17 from "@/assets/gallery/17.jpg";
+import img18 from "@/assets/gallery/18.jpg";
+import img19 from "@/assets/gallery/19.jpg";
+import img20 from "@/assets/gallery/20.jpg";
+import img21 from "@/assets/gallery/21.jpg";
+import img22 from "@/assets/gallery/22.jpg";
+import img23 from "@/assets/gallery/23.jpg";
+import img24 from "@/assets/gallery/24.jpg";
 import videoULK from "@/assets/gallery/ULK.mp4";
 
 interface MediaItem {
@@ -189,11 +197,83 @@ const Gallery: React.FC = () => {
     },
     {
       id: 17,
+      type: 'image',
+      url: img17,
+      title: 'Student Success',
+      description: 'Celebrating student achievements and milestones',
+      date: '2024-01-05',
+      tags: ['student', 'success', 'achievements', 'milestones']
+    },
+    {
+      id: 18,
+      type: 'image',
+      url: img18,
+      title: 'Career Exploration',
+      description: 'Exploring diverse career paths and opportunities',
+      date: '2024-01-01',
+      tags: ['career', 'exploration', 'opportunities', 'paths']
+    },
+    {
+      id: 19,
+      type: 'image',
+      url: img19,
+      title: 'Professional Training',
+      description: 'Advanced professional training and development',
+      date: '2023-12-28',
+      tags: ['professional', 'training', 'development', 'advanced']
+    },
+    {
+      id: 20,
+      type: 'image',
+      url: img20,
+      title: 'Career Counseling',
+      description: 'One-on-one career counseling sessions',
+      date: '2023-12-25',
+      tags: ['career', 'counseling', 'guidance', 'personal']
+    },
+    {
+      id: 21,
+      type: 'image',
+      url: img21,
+      title: 'Industry Connection',
+      description: 'Building bridges between students and industry',
+      date: '2023-12-20',
+      tags: ['industry', 'connection', 'networking', 'opportunities']
+    },
+    {
+      id: 22,
+      type: 'image',
+      url: img22,
+      title: 'Skill Building',
+      description: 'Practical skill-building workshops and sessions',
+      date: '2023-12-15',
+      tags: ['skills', 'building', 'workshop', 'practical']
+    },
+    {
+      id: 23,
+      type: 'image',
+      url: img23,
+      title: 'Career Success',
+      description: 'Celebrating career milestones and achievements',
+      date: '2023-12-10',
+      tags: ['career', 'success', 'achievements', 'milestones']
+    },
+    {
+      id: 24,
+      type: 'image',
+      url: img24,
+      title: 'Professional Network',
+      description: 'Expanding professional networks and connections',
+      date: '2023-12-05',
+      tags: ['professional', 'network', 'connections', 'growth']
+    },
+    {
+      id: 25,
       type: 'video',
       url: videoULK,
       title: 'ULK Success Story',
       description: 'Video showcasing ULK success story and achievements',
-      date: '2024-01-05',
+      date: '2023-12-01',
       tags: ['video', 'success', 'story', 'achievements']
     }
   ];

@@ -42,19 +42,19 @@ const Services: React.FC = () => {
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
                     <service.icon className="h-6 w-6 text-white" />
-                  </div>
+                      </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
+                      {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-[#2E7D32] rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-600">{feature}</span>
+                          <span className="text-gray-600">{feature}</span>
                       </li>
-                    ))}
+                      ))}
                   </ul>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
             ))}
           </div>
         </div>
@@ -72,13 +72,13 @@ const Services: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {process.map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-center">
+            <div className="text-center">
                   <div className="w-16 h-16 bg-[#2E7D32] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                     {index + 1}
-                  </div>
+              </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
-                </div>
+            </div>
                 {index < process.length - 1 && (
                   <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-[#2E7D32] -ml-4"></div>
                 )}
@@ -89,15 +89,20 @@ const Services: React.FC = () => {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animationType="scale-in" className="py-16 bg-[#2E7D32]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Take the first step towards your dream career with EPIC's comprehensive guidance services.
-          </p>
-          <Button asChild className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
-            <Link to="/contact">Contact Us</Link>
-          </Button>
+      <AnimatedSection animationType="scale-in" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2E7D32]/10 via-[#2E7D32]/5 to-[#2E7D32]/10"></div>
+            <div className="relative px-8 py-12 text-center border border-[#2E7D32]/20 rounded-2xl">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Take the first step towards your dream career with EPIC's comprehensive guidance services.
+              </p>
+              <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </AnimatedSection>
     </div>

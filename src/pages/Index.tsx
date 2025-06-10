@@ -63,7 +63,7 @@ const Index: React.FC = () => {
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
                     <feature.icon className="h-6 w-6 text-white" />
-                  </div>
+        </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </CardContent>
@@ -129,7 +129,7 @@ const Index: React.FC = () => {
                     <div className="ml-4">
                       <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
                       <p className="text-sm text-gray-600">{testimonial.role}</p>
-                    </div>
+                  </div>
                   </div>
                   <p className="text-gray-600 italic">"{testimonial.quote}"</p>
                 </CardContent>
@@ -140,15 +140,25 @@ const Index: React.FC = () => {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animationType="fade-in" className="py-16 bg-[#2E7D32]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Journey?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Join EPIC today and take the first step towards a successful career.
-          </p>
-          <Button asChild size="lg" className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
-            <Link to="/contact">Get Started</Link>
-          </Button>
+      <AnimatedSection animationType="scale-in" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2E7D32]/10 via-[#2E7D32]/5 to-[#2E7D32]/10"></div>
+            <div className="relative px-8 py-12 text-center border border-[#2E7D32]/20 rounded-2xl">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Career Journey Today</h2>
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Take the first step towards your dream career with EPIC's comprehensive guidance services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
+                  <Link to="/services">Get Started</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-[#2E7D32] text-[#2E7D32] hover:bg-[#F5F5F5]">
+                  <Link to="/contact">Contact Us</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </AnimatedSection>
     </div>
@@ -190,13 +200,13 @@ const steps = [
 
 const testimonials: Testimonial[] = [
   {
-    name: "John Doe",
+    name: "Muneza Jean",
     role: "Computer Science Student",
     quote: "EPIC helped me discover my passion for AI and guided me towards the right career path.",
     image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
   },
   {
-    name: "Jane Smith",
+    name: "Mugisha Junior",
     role: "Business Graduate",
     quote: "The personalized guidance and data-driven insights were invaluable in my career journey.",
     image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"

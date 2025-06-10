@@ -16,6 +16,7 @@ import img03 from "@/assets/gallery/03.jpg";
 import img04 from "@/assets/gallery/04.jpg";
 import img05 from "@/assets/gallery/05.jpg";
 import img06 from "@/assets/gallery/06.jpg";
+import team from "@/assets/team/team.jpeg"
 
 const values = [
   {
@@ -160,10 +161,10 @@ const About: React.FC = () => {
               The core principles that guide our approach to career guidance.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full">
+                <CardContent className="p-6 flex flex-col items-center text-center">
                   <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
                     <value.icon className="h-6 w-6 text-white" />
                   </div>
@@ -320,7 +321,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <img 
-                  src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src={team}
                   alt="Global connectivity and local expertise"
                   className="w-full h-auto hover:scale-105 transition-transform duration-500"
                 />

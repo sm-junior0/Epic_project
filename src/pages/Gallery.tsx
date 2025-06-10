@@ -267,15 +267,15 @@ const Gallery: React.FC = () => {
       date: '2023-12-05',
       tags: ['professional', 'network', 'connections', 'growth']
     },
-    {
-      id: 25,
-      type: 'video',
-      url: videoULK,
-      title: 'ULK Success Story',
-      description: 'Video showcasing ULK success story and achievements',
-      date: '2023-12-01',
-      tags: ['video', 'success', 'story', 'achievements']
-    }
+    // {
+    //   id: 25,
+    //   type: 'video',
+    //   url: videoULK,
+    //   title: 'ULK Success Story',
+    //   description: 'Video showcasing ULK success story and achievements',
+    //   date: '2023-12-01',
+    //   tags: ['video', 'success', 'story', 'achievements']
+    // }
   ];
 
   const filteredItems = mediaItems

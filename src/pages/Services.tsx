@@ -36,25 +36,25 @@ const Services: React.FC = () => {
       {/* Main Services */}
       <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-l-4 border-[#2E7D32]">
-                <CardContent className="p-6">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full border-l-4 border-[#2E7D32]">
+                <CardContent className="p-6 flex flex-col h-full">
                   <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
                     <service.icon className="h-6 w-6 text-white" />
-                      </div>
+                  </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
                   <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
+                    {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-[#2E7D32] rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600">{feature}</span>
+                        <span className="text-gray-600">{feature}</span>
                       </li>
-                      ))}
+                    ))}
                   </ul>
-                  </CardContent>
-                </Card>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

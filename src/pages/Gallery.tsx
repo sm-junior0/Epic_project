@@ -35,8 +35,7 @@ import img23 from "@/assets/gallery/23.jpg";
 import img24 from "@/assets/gallery/24.jpg";
 import img25 from "@/assets/gallery/25.jpg";
 import img26 from "@/assets/gallery/26.jpg";
-import img27 from "@/assets/gallery/27.jpg";
-import img28 from "@/assets/gallery/28.jpeg"
+import img27 from "@/assets/gallery/27.jpeg";
 import videoULK from "@/assets/gallery/ULK.mp4";
 
 interface MediaItem {
@@ -298,15 +297,6 @@ const Gallery: React.FC = () => {
       date: '2023-11-20',
       tags: ['professional', 'development', 'learning', 'skills']
     },
-    {
-      id: 28,
-      type: 'image',
-      url: img28,
-      title: 'Professional Development',
-      description: 'Continuous learning and skill enhancement',
-      date: '2023-11-20',
-      tags: ['professional', 'development', 'learning', 'skills']
-    }
   ];
 
   const filteredItems = mediaItems

@@ -6,6 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Sangwa from '../assets/team/Sangwa.jpeg'
 import fils from '../assets/team/fils.jpeg'
 import kevin from '../assets/team/Kevin.jpeg'
+import Isma from '../assets/team/Isma.jpeg'
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
@@ -45,25 +46,31 @@ const teamMembers = [
   {
     name: "Sangwa Deus Dedit",
     role: "Project Manager",
-    bio: "Experienced in leading education-focused projects that bridge student potential with real-world opportunities through strategic planning and coordination.",
+    bio: "Strategic leader driving education projects that connect student potential with real-world opportunities.",
     location: "Kigali, Rwanda",
     image: Sangwa
   },
   {
     name: "Fils Serugendo",
     role: "Sales Manager",
-    bio: "Specializes in identifying student needs and connecting them with the right career resources by leveraging sales strategies and market intelligence.",
+    bio: "Connects students with career resources through strategic partnerships and market-driven solutions.",
     location: "Kigali, Rwanda",
     image: fils
   },
   {
-    name: "Kevin",
+    name: "Ismail Munyentwari",
+    role: "Technical Project Manager",
+    bio: "Leads technical implementations and digital solutions for innovative career guidance platforms.",
+    location: "Kigali, Rwanda",
+    image: Isma
+  },
+  {
+    name: "Kevin Ngabo",
     role: "Marketing Manager",
-    bio: "Expert in crafting impactful campaigns that engage students and promote career development programs through effective storytelling and digital outreach.",
+    bio: "Creates engaging campaigns that connect students with career development opportunities.",
     location: "Kigali, Rwanda",
     image: kevin
   }
-  
 ];
 
 const galleryItems = [
@@ -186,23 +193,24 @@ const About: React.FC = () => {
               Meet the dedicated professionals behind EPIC's success.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="relative w-48 h-48 mx-auto mb-6">
-                    <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-[#2E7D32]/10 shadow-lg">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <div className="flex justify-center mb-6">
+                    <div className="w-44 h-44 rounded-full overflow-hidden ring-4 ring-[#2E7D32]/10 shadow-lg">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover"
                         loading="eager"
+                        style={{ imageRendering: 'auto' }}
                       />
                     </div>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 text-center mb-1">{member.name}</h3>
                   <p className="text-[#2E7D32] text-center mb-4">{member.role}</p>
-                  <p className="text-gray-600 text-center">{member.bio}</p>
+                  <p className="text-gray-600 text-center flex-grow">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}

@@ -202,7 +202,7 @@ const steps = [
 
 const testimonials: Testimonial[] = [
   {
-    name: "Muneza Jean",
+    name: "Shema Johnson",
     role: "Computer Science Student",
     quote: "EPIC helped me discover my passion for AI and guided me towards the right career path.",
     image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
@@ -214,7 +214,7 @@ const testimonials: Testimonial[] = [
     image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
   },
   {
-    name: "Shema Johnson",
+    name: "Jean Muneza",
     role: "Engineering Student",
     quote: "Thanks to EPIC, I found the perfect internship that aligned with my career goals.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"

@@ -36,6 +36,11 @@ import img24 from "@/assets/gallery/24.jpg";
 import img25 from "@/assets/gallery/25.jpg";
 import img26 from "@/assets/gallery/26.jpg";
 import img27 from "@/assets/gallery/27.jpeg";
+import img28 from "@/assets/gallery/28.jpg";
+import img29 from "@/assets/gallery/29.jpg";
+import img30 from "@/assets/gallery/30.jpg";
+import img31 from "@/assets/gallery/31.jpg";
+import img32 from "@/assets/gallery/32.jpg";
 import videoULK from "@/assets/gallery/ULK.mp4";
 
 interface MediaItem {
@@ -94,10 +99,10 @@ const Gallery: React.FC = () => {
       id: 5,
       type: 'image',
       url: img05,
-      title: 'Leadership Seminar',
-      description: 'Leadership development and management training',
+      title: 'Music Production Studio',
+      description: 'State-of-the-art music production facility showcasing professional recording equipment and sound engineering capabilities. Students learn hands-on experience in music production and audio engineering.',
       date: '2024-02-28',
-      tags: ['leadership', 'seminar', 'management', 'training']
+      tags: ['music', 'production', 'studio', 'audio', 'engineering']
     },
     {
       id: 6,
@@ -166,10 +171,10 @@ const Gallery: React.FC = () => {
       id: 13,
       type: 'image',
       url: img13,
-      title: 'Career Guidance',
-      description: 'Personalized career guidance session',
+      title: 'Sound Engineering Workshop',
+      description: 'Expert-led workshop on sound engineering and music production techniques. Students gain practical experience with professional audio equipment and learn industry-standard production methods.',
       date: '2024-01-25',
-      tags: ['career', 'guidance', 'personalized', 'development']
+      tags: ['music', 'sound', 'engineering', 'workshop', 'production']
     },
     {
       id: 14,
@@ -211,10 +216,10 @@ const Gallery: React.FC = () => {
       id: 18,
       type: 'image',
       url: img18,
-      title: 'Career Exploration',
-      description: 'Exploring diverse career paths and opportunities',
+      title: 'Music Industry Career Paths',
+      description: 'Exploring diverse career opportunities in Rwanda\'s growing music industry, from production and engineering to artist management and music business.',
       date: '2024-01-01',
-      tags: ['career', 'exploration', 'opportunities', 'paths']
+      tags: ['music', 'career', 'industry', 'opportunities', 'production']
     },
     {
       id: 19,
@@ -238,10 +243,10 @@ const Gallery: React.FC = () => {
       id: 21,
       type: 'image',
       url: img21,
-      title: 'Industry Connection',
-      description: 'Building bridges between students and industry',
+      title: 'Music Technology Lab',
+      description: 'Advanced music technology laboratory equipped with cutting-edge production tools and software. Students learn digital music production and modern recording techniques.',
       date: '2023-12-20',
-      tags: ['industry', 'connection', 'networking', 'opportunities']
+      tags: ['music', 'technology', 'production', 'digital', 'recording']
     },
     {
       id: 22,
@@ -296,6 +301,51 @@ const Gallery: React.FC = () => {
       description: 'Continuous learning and skill enhancement',
       date: '2023-11-20',
       tags: ['professional', 'development', 'learning', 'skills']
+    },
+    {
+      id: 28,
+      type: 'image',
+      url: img28,
+      title: 'Professional Recording Studio',
+      description: 'Professional-grade recording studio environment where students can practice and develop their music production and sound engineering skills with industry-standard equipment.',
+      date: '2023-11-20',
+      tags: ['music', 'recording', 'studio', 'production', 'engineering']
+    },
+    {
+      id: 29,
+      type: 'image',
+      url: img29,
+      title: 'Career Development Workshop',
+      description: 'Interactive workshop focusing on career planning and professional development strategies.',
+      date: '2023-11-15',
+      tags: ['career', 'workshop', 'development', 'planning']
+    },
+    {
+      id: 30,
+      type: 'image',
+      url: img30,
+      title: 'Music Production Masterclass',
+      description: 'Intensive masterclass on music production and sound design, featuring industry professionals sharing insights on modern music production techniques and trends.',
+      date: '2023-11-10',
+      tags: ['music', 'production', 'masterclass', 'sound', 'design']
+    },
+    {
+      id: 31,
+      type: 'image',
+      url: img31,
+      title: 'Professional Skills Training',
+      description: 'Comprehensive training session on essential professional skills and workplace competencies.',
+      date: '2023-11-05',
+      tags: ['skills', 'training', 'professional', 'development']
+    },
+    {
+      id: 32,
+      type: 'image',
+      url: img32,
+      title: 'Industry Networking Event',
+      description: 'Networking event connecting students with industry professionals and potential employers.',
+      date: '2023-11-01',
+      tags: ['networking', 'industry', 'career', 'opportunities']
     },
   ];
 
@@ -396,36 +446,86 @@ const Gallery: React.FC = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-12 sm:py-16 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredItems.length === 0 ? (
-            <div className="text-center py-8 sm:py-12">
+            <div className="text-center py-12">
               <div className="text-[#2E7D32] mb-4">
-                <Search className="h-8 w-8 sm:h-12 sm:w-12 mx-auto" />
+                <Search className="h-12 w-12 mx-auto" />
               </div>
-              <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-2">No results found</h3>
-              <p className="text-sm sm:text-base text-gray-600">Try adjusting your search or filter criteria</p>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">No results found</h3>
+              <p className="text-gray-600">Try adjusting your search or filter criteria</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredItems.map((item, index) => (
                 <Card 
                   key={item.id} 
-                  className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group animate-fade-in border-[#2E7D32]/20"
+                  className="hover:shadow-lg transition-all duration-300 hover:scale-105 group animate-fade-in border-[#2E7D32]/20"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="overflow-hidden rounded-lg">
-                    <img 
-                      src={item.url} 
+                  <div className="relative">
+                    <img
+                      src={item.url}
                       alt={item.title}
-                      className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-48 object-cover rounded-t-lg"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
-                        <p className="text-xs sm:text-sm font-medium">{item.title}</p>
-                      </div>
+                    <div className="absolute top-2 right-2">
+                      <Badge 
+                        variant={item.type === 'video' ? 'default' : 'secondary'} 
+                        className={`flex items-center gap-1 ${
+                          item.type === 'video' 
+                            ? 'bg-[#2E7D32] text-white' 
+                            : 'bg-[#2E7D32]/10 text-[#2E7D32]'
+                        }`}
+                      >
+                        {item.type === 'video' ? <Video className="h-3 w-3" /> : <Image className="h-3 w-3" />}
+                        {item.type}
+                      </Badge>
                     </div>
+                    {item.type === 'video' && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 bg-[#2E7D32] bg-opacity-50 rounded-full flex items-center justify-center group-hover:bg-opacity-70 transition-all">
+                          <Video className="h-6 w-6 text-white ml-1" />
+                        </div>
+                      </div>
+                    )}
                   </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1">{item.title}</h3>
+                    <p className="text-sm text-gray-600 mb-3 line-clamp-2">{item.description}</p>
+                    
+                    <div className="flex items-center gap-2 mb-3">
+                      <Calendar className="h-4 w-4 text-[#2E7D32]" />
+                      <span className="text-sm text-gray-500">
+                        {new Date(item.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
+                        })}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1">
+                      {item.tags.slice(0, 3).map((tag, tagIndex) => (
+                        <Badge 
+                          key={tagIndex} 
+                          variant="outline" 
+                          className="text-xs border-[#2E7D32]/20 text-[#2E7D32] hover:bg-[#2E7D32]/10"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                      {item.tags.length > 3 && (
+                        <Badge 
+                          variant="outline" 
+                          className="text-xs border-[#2E7D32]/20 text-[#2E7D32] hover:bg-[#2E7D32]/10"
+                        >
+                          +{item.tags.length - 3}
+                        </Badge>
+                      )}
+                    </div>
+                  </CardContent>
                 </Card>
               ))}
             </div>

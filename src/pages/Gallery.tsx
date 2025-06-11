@@ -396,86 +396,36 @@ const Gallery: React.FC = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredItems.length === 0 ? (
-            <div className="text-center py-12">
+            <div className="text-center py-8 sm:py-12">
               <div className="text-[#2E7D32] mb-4">
-                <Search className="h-12 w-12 mx-auto" />
+                <Search className="h-8 w-8 sm:h-12 sm:w-12 mx-auto" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No results found</h3>
-              <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+              <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-2">No results found</h3>
+              <p className="text-sm sm:text-base text-gray-600">Try adjusting your search or filter criteria</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {filteredItems.map((item, index) => (
                 <Card 
                   key={item.id} 
-                  className="hover:shadow-lg transition-all duration-300 hover:scale-105 group animate-fade-in border-[#2E7D32]/20"
+                  className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group animate-fade-in border-[#2E7D32]/20"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="relative">
-                    <img
-                      src={item.url}
+                  <div className="overflow-hidden rounded-lg">
+                    <img 
+                      src={item.url} 
                       alt={item.title}
-                      className="w-full h-48 object-cover rounded-t-lg"
+                      className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-2 right-2">
-                      <Badge 
-                        variant={item.type === 'video' ? 'default' : 'secondary'} 
-                        className={`flex items-center gap-1 ${
-                          item.type === 'video' 
-                            ? 'bg-[#2E7D32] text-white' 
-                            : 'bg-[#2E7D32]/10 text-[#2E7D32]'
-                        }`}
-                      >
-                        {item.type === 'video' ? <Video className="h-3 w-3" /> : <Image className="h-3 w-3" />}
-                        {item.type}
-                      </Badge>
-                    </div>
-                    {item.type === 'video' && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-[#2E7D32] bg-opacity-50 rounded-full flex items-center justify-center group-hover:bg-opacity-70 transition-all">
-                          <Video className="h-6 w-6 text-white ml-1" />
-                        </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
+                        <p className="text-xs sm:text-sm font-medium">{item.title}</p>
                       </div>
-                    )}
+                    </div>
                   </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1">{item.title}</h3>
-                    <p className="text-sm text-gray-600 mb-3 line-clamp-2">{item.description}</p>
-                    
-                    <div className="flex items-center gap-2 mb-3">
-                      <Calendar className="h-4 w-4 text-[#2E7D32]" />
-                      <span className="text-sm text-gray-500">
-                        {new Date(item.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric'
-                        })}
-                      </span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1">
-                      {item.tags.slice(0, 3).map((tag, tagIndex) => (
-                        <Badge 
-                          key={tagIndex} 
-                          variant="outline" 
-                          className="text-xs border-[#2E7D32]/20 text-[#2E7D32] hover:bg-[#2E7D32]/10"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                      {item.tags.length > 3 && (
-                        <Badge 
-                          variant="outline" 
-                          className="text-xs border-[#2E7D32]/20 text-[#2E7D32] hover:bg-[#2E7D32]/10"
-                        >
-                          +{item.tags.length - 3}
-                        </Badge>
-                      )}
-                    </div>
-                  </CardContent>
                 </Card>
               ))}
             </div>

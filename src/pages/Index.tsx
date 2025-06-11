@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
+import ScrollToTop from '@/components/ScrollToTop';
 
 interface Testimonial {
   name: string;
@@ -161,6 +162,7 @@ const Index: React.FC = () => {
           </div>
         </div>
       </AnimatedSection>
+      <ScrollToTop />
     </div>
   );
 };

@@ -188,17 +188,17 @@ const About: React.FC = () => {
       <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Meet the dedicated professionals behind EPIC's success.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {teamMembers.map((member, index) => (
               <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                <CardContent className="p-6 flex flex-col flex-grow">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-44 h-44 rounded-full overflow-hidden ring-4 ring-[#2E7D32]/10 shadow-lg">
+                <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
+                  <div className="flex justify-center mb-4 sm:mb-6">
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden ring-4 ring-[#2E7D32]/10 shadow-lg">
                       <img
                         src={member.image}
                         alt={member.name}
@@ -208,9 +208,9 @@ const About: React.FC = () => {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 text-center mb-1">{member.name}</h3>
-                  <p className="text-[#2E7D32] text-center mb-4">{member.role}</p>
-                  <p className="text-gray-600 text-center flex-grow">{member.bio}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 text-center mb-1">{member.name}</h3>
+                  <p className="text-[#2E7D32] text-sm sm:text-base text-center mb-3 sm:mb-4">{member.role}</p>
+                  <p className="text-sm sm:text-base text-gray-600 text-center flex-grow">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}

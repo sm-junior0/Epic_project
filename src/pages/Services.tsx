@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, TrendingUp, Users, Target, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Services: React.FC = () => {
   return (
@@ -105,6 +106,7 @@ const Services: React.FC = () => {
           </div>
         </div>
       </AnimatedSection>
+      <ScrollToTop />
     </div>
   );
 };

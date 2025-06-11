@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Label } from "@/components/ui/label";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Contact: React.FC = () => {
   return (
@@ -209,6 +210,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </AnimatedSection>
+      <ScrollToTop />
     </div>
   );
 };

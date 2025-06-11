@@ -214,7 +214,7 @@ const testimonials: Testimonial[] = [
     image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
   },
   {
-    name: "Mike Johnson",
+    name: "Shema Johnson",
     role: "Engineering Student",
     quote: "Thanks to EPIC, I found the perfect internship that aligned with my career goals.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"

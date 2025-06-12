@@ -3,12 +3,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Target, Users, Award, MapPin, Mail, Linkedin, Eye } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimatedSection from "@/components/AnimatedSection";
-import Sangwa from '../assets/team/Sangwa.jpeg'
-import fils from '../assets/team/fils.jpeg'
-import kevin from '../assets/team/Kevin.jpeg'
-import Isma from '../assets/team/Isma.jpeg'
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+
+// Import team images
+import Fils from '../assets/team/fils.jpeg';
+import Daniella from '../assets/team/Daniella.jpg';
+import Kenny from '../assets/team/Kenny.png';
+import Sangwa from '../assets/team/Sangwa.jpeg';
+import Kevin from '../assets/team/Kevin.jpeg';
+import Ismail from '../assets/team/Isma.jpeg';
 
 // Import gallery images
 import img01 from "@/assets/gallery/01.jpg";
@@ -22,54 +26,62 @@ import team from "@/assets/team/team.jpeg"
 const values = [
   {
     title: "Data-Driven Insights",
-    description: "We combine market data with personal interests to guide your career decisions.",
+    description: "We combine labor market data with student profiles to ensure informed, confident career choices.",
     icon: TrendingUp
   },
   {
     title: "Personalized Approach",
-    description: "Every student is unique. We tailor our guidance to your specific needs and goals.",
+    description: "AI-powered recommendations tailored to each student's unique aspirations and strengths.",
     icon: Target
   },
   {
     title: "Expert Team",
-    description: "Our team brings together career experts, data analysts, and student success specialists.",
+    description: "Career counselors, data analysts and educators working together for student success.",
     icon: Users
   },
   {
     title: "Proven Results",
-    description: "Our approach has helped countless students find their ideal career paths.",
+    description: "Thousands of students empowered to pursue fulfilling career paths with confidence.",
     icon: Award
   }
 ];
 
 const teamMembers = [
   {
-    name: "Sangwa Deus Dedit",
-    role: "Project Manager",
+    name: "Fils Serugendo",
+    role: "Founder",
+    bio: "Connects students with career resources through strategic partnerships and market-driven solutions.",
+    image: Fils
+  },
+  {
+    name: "Daniella Ishimwe",
+    role: "Operations",
     bio: "Strategic leader driving education projects that connect student potential with real-world opportunities.",
-    location: "Kigali, Rwanda",
+    image: Daniella
+  },
+  {
+    name: "Kenny Rulisa",
+    role: "Creative Director",
+    bio: "Strategic leader driving education projects that connect student potential with real-world opportunities.",
+    image: Kenny
+  },
+  {
+    name: "Sangwa Deus Dedit",
+    role: "Marketing",
+    bio: "Strategic leader driving education projects that connect student potential with real-world opportunities.",
     image: Sangwa
   },
   {
-    name: "Fils Serugendo",
-    role: "Sales Manager",
-    bio: "Connects students with career resources through strategic partnerships and market-driven solutions.",
-    location: "Kigali, Rwanda",
-    image: fils
+    name: "Kevin Ngabo",
+    role: "Public Relations",
+    bio: "Creates engaging campaigns that connect students with career development opportunities.",
+    image: Kevin
   },
   {
     name: "Ismail Munyentwari",
     role: "Technical Project Manager",
     bio: "Leads technical implementations and digital solutions for innovative career guidance platforms.",
-    location: "Kigali, Rwanda",
-    image: Isma
-  },
-  {
-    name: "Kevin Ngabo",
-    role: "Marketing Manager",
-    bio: "Creates engaging campaigns that connect students with career development opportunities.",
-    location: "Kigali, Rwanda",
-    image: kevin
+    image: Ismail
   }
 ];
 
@@ -121,7 +133,10 @@ const About: React.FC = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Empowering students to make informed career decisions through data-driven insights and personalized guidance.
+              Welcome to <span className="text-[#2E7D32]">EPIC Careers</span>, where data meets ambition. We provide students with personalized, data-driven career guidance that helps them make informed decisions about their future.
+            </p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+              EPIC Careers was founded in 2020 by a passionate team of educators, headhunters, marketers, and data analysts who saw a gap in career guidance for high school students.
             </p>
           </div>
         </div>
@@ -138,8 +153,7 @@ const About: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
                 <p className="text-gray-600">
-                  To revolutionize career guidance by leveraging data analytics and market insights, 
-                  helping students make informed decisions about their future paths.
+                  To provide comprehensive, personalized career guidance that helps individuals discover their strengths, explore meaningful career options, and make informed decisions to achieve their professional goals.
                 </p>
               </CardContent>
             </Card>
@@ -150,8 +164,7 @@ const About: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
                 <p className="text-gray-600">
-                  To become the leading platform for career guidance, connecting students with 
-                  opportunities that align with their aspirations and market demands.
+                  We envision a world where everyone has access to the tools and support needed to build a fulfilling and successful career.
                 </p>
               </CardContent>
             </Card>
@@ -170,8 +183,8 @@ const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full">
-                <CardContent className="p-6 flex flex-col items-center text-center">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full border-l-4 border-[#2E7D32]">
+                <CardContent className="p-6 flex flex-col">
                   <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mb-4">
                     <value.icon className="h-6 w-6 text-white" />
                   </div>
@@ -188,32 +201,81 @@ const About: React.FC = () => {
       <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Meet the dedicated professionals behind EPIC's success.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
-                  <div className="flex justify-center mb-4 sm:mb-6">
-                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden ring-4 ring-[#2E7D32]/10 shadow-lg">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                        loading="eager"
-                        style={{ imageRendering: 'auto' }}
-                      />
-                    </div>
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 h-full">
+                <CardContent className="p-6 flex flex-col items-center text-center">
+                  <div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-[#2E7D32]/20">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 text-center mb-1">{member.name}</h3>
-                  <p className="text-[#2E7D32] text-sm sm:text-base text-center mb-3 sm:mb-4">{member.role}</p>
-                  <p className="text-sm sm:text-base text-gray-600 text-center flex-grow">{member.bio}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-[#2E7D32] font-medium mb-4">{member.role}</p>
+                  <p className="text-gray-600">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Gallery Section */}
+      <AnimatedSection animationType="fade-in" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Impact in Action</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              See how EPIC Careers is transforming students' lives through data-driven career guidance.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryItems.map((item, index) => (
+              <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src={item.src} 
+                  alt={item.alt}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">{item.alt}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Rwanda Focus */}
+      <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Rwanda-Based, Globally Relevant</h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Headquartered in Kigali, Rwanda, we proudly serve the East African education community while staying connected to international trends. Our localized expertise and global perspective help students make competitive career choices.
+              </p>
+              <div className="bg-white p-6 rounded-lg border border-[#2E7D32]/20">
+                <h3 className="text-xl font-semibold text-[#2E7D32] mb-4">Why Data-Driven Career Decisions Matter Today</h3>
+                <p className="text-gray-600">
+                  The job market is changing faster than ever. New technologies and industries are reshaping what success looks like, and students must be prepared with current, relevant, and forward-looking insights.
+                </p>
+              </div>
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={team}
+                alt="EPIC team in Rwanda"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </AnimatedSection>
@@ -223,123 +285,13 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Join Our Mission</h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Be part of our journey to transform career guidance and help students achieve their dreams.
+            Be part of a movement that's reshaping the future of career guidance.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-white text-[#2E7D32] hover:bg-[#F5F5F5]">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-       
-          </div>
+          <Button asChild className="bg-white text-[#2E7D32] hover:bg-gray-100 px-8 py-6 text-lg">
+            <Link to="/contact">Contact Us</Link>
+          </Button>
         </div>
       </AnimatedSection>
-
-      {/* What Makes Us Different */}
-      <AnimatedSection animationType="slide-in-right" className="py-16 bg-[#F5F5F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Makes EPIC Different</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              In today's rapidly changing job market, career decisions need more than just intuition. 
-              They need data, strategy, and personalized guidance.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <Card key={index} className="h-full hover:shadow-xl hover:scale-105 transition-all duration-300 border-l-4 border-[#2E7D32]">
-                  <CardHeader className="text-center">
-                    <div className="w-12 h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto mb-4 hover:rotate-12 transition-transform duration-300">
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                    <CardTitle className="text-lg text-gray-900">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 text-center">{value.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Gallery Section */}
-      <AnimatedSection animationType="fade-in" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Impact in Action</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              See how EPIC Careers is transforming students' lives through data-driven career guidance 
-              and personalized support across Rwanda and beyond.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryItems.map((item, index) => (
-              <div key={index} className="relative group hover:scale-105 transition-all duration-300">
-                <div className="overflow-hidden rounded-lg shadow-lg">
-                  <img 
-                    src={item.src} 
-                    alt={item.alt}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <p className="text-sm font-medium">{item.alt}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Rwanda Focus */}
-      <AnimatedSection animationType="slide-up" className="py-24 bg-gradient-to-b from-white to-[#F5F5F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Rwanda-Based, Globally Relevant</h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  While we're proudly based in Kigali, Rwanda, our approach and insights have global relevance. 
-                  We understand the unique challenges and opportunities within the East African context, while 
-                  staying connected to international trends and best practices.
-                </p>
-                <p className="text-lg text-gray-600 mb-6">
-                  Our local expertise combined with global perspective allows us to offer career guidance that's 
-                  both culturally relevant and internationally competitive. Whether you're planning to build your 
-                  career locally or exploring opportunities abroad, we provide the insights you need.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-[#2E7D32]/10 hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#2E7D32] mb-4">Why Data-Driven Career Decisions Matter Today</h3>
-                <p className="text-gray-600">
-                  The job market is evolving faster than ever. Skills that were in demand five years ago may be 
-                  obsolete today, while entirely new career paths are emerging. Without access to current market 
-                  data and trends, students risk making decisions based on outdated information. EPIC bridges this 
-                  gap by providing real-time insights that inform smarter career choices.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-                <img 
-                  src={team}
-                  alt="Global connectivity and local expertise"
-                  className="w-full h-auto hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2E7D32]/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Bottom Spacer */}
-      <div className="h-24 bg-[#F5F5F5]"></div>
 
       <ScrollToTop />
     </div>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Linkedin, Clock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Label } from "@/components/ui/label";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
       <AnimatedSection animationType="slide-up" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Contact Form - Maintained original */}
             <Card className="border-l-4 border-[#2E7D32]">
               <CardContent className="p-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
+            {/* Contact Information - Updated with provided content */}
             <div className="space-y-8">
               <Card className="border-l-4 border-[#2E7D32]">
                 <CardContent className="p-6">
@@ -121,12 +121,12 @@ const Contact: React.FC = () => {
                       <div>
                         <h3 className="font-medium text-gray-900">LinkedIn</h3>
                         <a
-                          href="https://linkedin.com/company/epiccareers"
+                          href="https://www.linkedin.com/company/epicareersrwanda/"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-[#2E7D32] hover:underline"
                         >
-                          linkedin.com/company/epiccareers
+                          linkedin.com/company/epicareersrwanda
                         </a>
                       </div>
                     </div>
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
         </div>
       </AnimatedSection>
 
-      {/* Map Section */}
+      {/* Map Section - Maintained original */}
       <AnimatedSection
         animationType="slide-in-right"
         className="py-16 bg-white"
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
         </div>
       </AnimatedSection>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - Maintained original */}
       <AnimatedSection animationType="scale-in" className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

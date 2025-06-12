@@ -19,60 +19,56 @@ const Partners: React.FC = () => {
       sector: "Tech & Digital Careers",
       icon: Monitor,
       logo: dreamizeLogo,
-      description: "Leading technology and digital skills training organization focused on preparing students for the digital economy.",
+      description: "Bridging the gap between academic learning and industry-ready tech skills through hands-on projects and real-world applications.",
       services: [
         "Software Development Training",
         "Digital Marketing Courses",
         "Data Science Programs",
         "UX/UI Design Workshops",
         "Tech Career Mentorship"
-      ],
-      focus: "Bridging the gap between academic learning and industry-ready tech skills through hands-on projects and real-world applications."
+      ]
     },
     {
       name: "GreenLand Film and Television School",
       sector: "Filmmaking & Creative Media",
       icon: Film,
       logo: greenLandLogo,
-      description: "Professional filmmaking and creative content production studio offering comprehensive media training programs.",
+      description: "Nurturing creative talent through professional-grade training and industry exposure in the rapidly growing African film industry.",
       services: [
         "Film Production Training",
         "Video Editing Masterclasses",
         "Cinematography Workshops",
         "Screenwriting Programs",
         "Creative Direction Mentorship"
-      ],
-      focus: "Nurturing creative talent through professional-grade training and industry exposure in the rapidly growing African film industry."
+      ]
     },
     {
       name: "Intare SoundWave Initiative",
       sector: "Music & Audio Production",
       icon: Music,
       logo: isiLogo,
-      description: "Premier music production and audio engineering center providing world-class training in sound production.",
+      description: "Empowering the next generation of audio professionals with cutting-edge technology and industry-standard practices.",
       services: [
         "Music Production Training",
         "Audio Engineering Courses",
         "Sound Design Workshops",
         "Recording Techniques",
         "Music Business Education"
-      ],
-      focus: "Empowering the next generation of audio professionals with cutting-edge technology and industry-standard practices."
+      ]
     },
     {
       name: "Agura Group",
       sector: "Marketing, Sales & Branding",
       icon: Megaphone,
       logo: aguraLogo,
-      description: "Strategic marketing and brand development agency specializing in comprehensive business growth solutions.",
+      description: "Building strategic marketing capabilities that drive business growth and create lasting brand value in competitive markets.",
       services: [
         "Digital Marketing Strategy",
         "Brand Development",
         "Sales Training Programs",
         "Market Research",
         "Business Development Consulting"
-      ],
-      focus: "Building strategic marketing capabilities that drive business growth and create lasting brand value in competitive markets."
+      ]
     }
   ];
 
@@ -89,8 +85,7 @@ const Partners: React.FC = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet our strategic partners who provide specialized training and career opportunities 
-              across diverse industries, creating a comprehensive support network for your career journey.
+              Meet our strategic partners who provide specialized training and career opportunities across diverse industries, creating a comprehensive support network for your career journey.
             </p>
           </div>
         </div>
@@ -125,22 +120,16 @@ const Partners: React.FC = () => {
                     <p className="text-gray-600 text-lg">{partner.description}</p>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">Services & Programs</h4>
-                        <ul className="space-y-2">
-                          {partner.services.map((service, serviceIndex) => (
-                            <li key={serviceIndex} className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-[#2E7D32] rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">{service}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">Focus Area</h4>
-                        <p className="text-gray-600">{partner.focus}</p>
-                      </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-3">Services & Programs:</h4>
+                      <ul className="space-y-2">
+                        {partner.services.map((service, serviceIndex) => (
+                          <li key={serviceIndex} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-[#2E7D32] rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600">{service}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </CardContent>
                 </Card>
@@ -167,8 +156,7 @@ const Partners: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Industry Expertise</h3>
               <p className="text-gray-600">
-                Each partner brings deep industry knowledge and current market insights to ensure 
-                relevant, up-to-date career guidance.
+                Partners bring deep industry knowledge and current market insights for relevant, up-to-date career guidance.
               </p>
             </div>
             
@@ -178,8 +166,7 @@ const Partners: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Practical Training</h3>
               <p className="text-gray-600">
-                Students gain hands-on experience through specialized programs that prepare them 
-                for real-world career challenges.
+                Hands-on experience through specialized programs prepares students for real-world challenges.
               </p>
             </div>
             
@@ -189,8 +176,7 @@ const Partners: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Network Access</h3>
               <p className="text-gray-600">
-                Direct connections to industry professionals and potential employers create 
-                valuable networking opportunities.
+                Direct connections to industry professionals and employers create valuable opportunities.
               </p>
             </div>
           </div>

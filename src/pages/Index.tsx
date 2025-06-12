@@ -187,15 +187,15 @@ const features = [
 
 const steps = [
   {
-    title: "Define Your Goals",
+    title: "Define",
     description: "Identify your interests, strengths, and career aspirations with our expert guidance."
   },
   {
-    title: "Explore Options",
+    title: "Deepen",
     description: "Learn about career paths that align with your profile and real-world opportunities."
   },
   {
-    title: "Take Action",
+    title: "Strengthen",
     description: "Develop a practical plan to pursue your education and career objectives."
   }
 ];

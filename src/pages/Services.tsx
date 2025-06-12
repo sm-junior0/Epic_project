@@ -80,7 +80,6 @@ const Services: React.FC = () => {
                     {index + 1}
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 mb-2">{step.subtitle}</p>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
                 {index < process.length - 1 && (
@@ -179,18 +178,15 @@ const services = [
 
 const process = [
   {
-    title: "Initial Assessment",
-    subtitle: "(Define)",
+    title: "Define",
     description: "We begin by understanding your personality, strengths, and goals using a series of career tests and evaluations."
   },
   {
-    title: "Personalized Planning",
-    subtitle: "(Deepen)",
+    title: "Deepen",
     description: "Based on your results, we create a detailed and customized career plan tailored to your aspirations and market realities."
   },
   {
-    title: "Ongoing Support",
-    subtitle: "(Strengthen)",
+    title: "Strengthen",
     description: "Receive continued mentorship, tools, and updates to help you track progress, refine goals, and succeed long-term."
   }
 ];

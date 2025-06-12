@@ -32,7 +32,7 @@ const Index: React.FC = () => {
               <span className="text-[#2E7D32]"> EPIC</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Data-driven career guidance and personalized pathways to success.
+            Empowering students with data-driven insights and personalized career guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
@@ -119,7 +119,7 @@ const Index: React.FC = () => {
               Hear from students who have transformed their careers with EPIC.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-6">
@@ -148,7 +148,7 @@ const Index: React.FC = () => {
             <div className="relative px-8 py-12 text-center border border-[#2E7D32]/20 rounded-2xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Career Journey Today</h2>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Take the first step towards your dream career with EPIC's comprehensive guidance services.
+              Take the first step toward your dream career with EPIC's free and personalized guidance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
@@ -170,17 +170,17 @@ const Index: React.FC = () => {
 const features = [
   {
     title: "Data-Driven Insights",
-    description: "Make informed decisions based on real market data and trends.",
+    description: "We use real market data to help students make informed decisions about their careers.",
     icon: CheckCircle2
   },
   {
     title: "Personalized Guidance",
-    description: "Receive tailored advice that matches your unique strengths and goals.",
+    description: "Each student receives advice tailored to their skills, interests, and aspirations.",
     icon: CheckCircle2
   },
   {
     title: "Expert Support",
-    description: "Work with experienced career counselors who understand your journey.",
+    description: "Our experienced counselors guide you through your career journey with care and expertise.",
     icon: CheckCircle2
   }
 ];
@@ -188,35 +188,41 @@ const features = [
 const steps = [
   {
     title: "Define Your Goals",
-    description: "We help you identify your interests, strengths, and career aspirations."
+    description: "Identify your interests, strengths, and career aspirations with our expert guidance."
   },
   {
     title: "Explore Options",
-    description: "Discover career paths that align with your goals and market opportunities."
+    description: "Learn about career paths that align with your profile and real-world opportunities."
   },
   {
     title: "Take Action",
-    description: "Develop a concrete plan to achieve your career objectives."
+    description: "Develop a practical plan to pursue your education and career objectives."
   }
 ];
 
 const testimonials: Testimonial[] = [
   {
-    name: "Shema Johnson",
-    role: "Computer Science Student",
-    quote: "EPIC helped me discover my passion for AI and guided me towards the right career path.",
+    name: "Talia Niyonsaba",
+    role: "High School Student",
+    quote: "EPIC helped me go from feeling overwhelmed to confident about my future. Their personalized assessments showed me a clear path forward.",
     image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
   },
   {
-    name: "Mugisha Junior",
-    role: "Business Graduate",
-    quote: "The personalized guidance and data-driven insights were invaluable in my career journey.",
+    name: "Peter Uwimana",
+    role: "Parent",
+    quote: "EPIC gave my child tailored, data-driven career advice that was far beyond generic guidance. I highly recommend them to other parents.",
     image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
   },
   {
-    name: "Jean Muneza",
-    role: "Engineering Student",
-    quote: "Thanks to EPIC, I found the perfect internship that aligned with my career goals.",
+    name: "Aimee Mukamana",
+    role: "Future Engineering Student",
+    quote: "Thanks to EPIC, I discovered a passion for engineering I didn't know I had. Their guidance helped me find direction and motivation.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+  },
+  {
+    name: "Claire Imanzi",
+    role: "High School Counselor",
+    quote: "EPIC has been a game-changer for our school. Their data-backed approach has made a real difference in my students' career planning.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
   }
 ];

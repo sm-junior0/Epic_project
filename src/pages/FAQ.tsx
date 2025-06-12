@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -17,70 +17,70 @@ interface Category {
 const FAQ: React.FC = () => {
   const faqs = [
     {
-      question: "How does EPIC help students?",
-      answer: "EPIC helps students through our structured Define-Deepen-Strengthen approach. We start by identifying your interests, strengths, and career goals through comprehensive assessments. Then we deepen your understanding of potential career paths using real market data and trends. Finally, we help you strengthen your career plan with ongoing support, skill development recommendations, and performance tracking."
+      question: "What is the goal of your organization?",
+      answer: "We provide high school students with data-driven career guidance and study abroad opportunities. Our goal is to help students make informed decisions about their future using accurate market information and personalized assessments."
     },
     {
-      question: "Is this service free?",
-      answer: "We offer both free and premium services. Our basic career assessment and general guidance resources are available at no cost. Premium services include personalized one-on-one consultations, detailed market analysis reports, and comprehensive career planning sessions. Contact us to learn more about our pricing structure and available packages."
+      question: "How does your organization use data analytics?",
+      answer: "We analyze labor market trends, employment statistics, and education requirements to create personalized career profiles. This data helps match students' skills and interests with suitable career paths."
     },
     {
-      question: "Can I apply for study abroad from here?",
-      answer: "While EPIC doesn't directly handle study abroad applications, we provide comprehensive study abroad program design services. We help you identify the best programs and universities that align with your career goals, assist with application strategy, identify scholarship opportunities, and provide guidance throughout the application process. We work with trusted partners to ensure you have complete support."
+      question: "What types of study abroad programs do you offer?",
+      answer: "We offer semester/year programs, language immersion, and internships. These programs enhance academic, personal, and professional development through international experiences."
     },
     {
-      question: "How can a company become a partner?",
-      answer: "We welcome partnerships with organizations that share our commitment to career development. To become a partner, reach out through our contact form with 'Partnership' as the subject. We look for partners who can provide specialized training, mentorship opportunities, or career pathways in their respective industries. Our current ecosystem includes partners in technology, creative media, music production, and marketing."
+      question: "How do you ensure student safety abroad?",
+      answer: "We partner with reputable institutions and provide pre-departure orientations. On-site support services help students navigate cultural and academic differences safely."
     },
     {
-      question: "What makes EPIC different from other career guidance services?",
-      answer: "EPIC's unique approach combines personal reflection with hard market data. While many career services rely solely on personality tests or general advice, we analyze real job market trends, salary data, and industry forecasts to ensure your career decisions are both personally fulfilling and strategically sound. Our Rwanda-based perspective with global relevance also sets us apart."
+      question: "Is there a fee for your services?",
+      answer: "Career guidance services are completely free for high school students. Study abroad programs may have fees depending on the specific program and institution."
     },
     {
-      question: "How long does the career planning process take?",
-      answer: "The timeline varies depending on your specific needs and chosen service level. Our basic assessment can be completed in 1-2 sessions, while comprehensive career planning typically takes 4-6 weeks. This includes initial assessment, market analysis, plan development, and follow-up sessions. We also provide ongoing support for as long as you need it."
+      question: "How can schools access your services?",
+      answer: "Schools can create free accounts on our data analysis site for career assessments. Study abroad applications are processed through our Fast Track portal with team guidance."
     },
     {
-      question: "Do you work with high school students?",
-      answer: "Yes! We work with students at various stages of their academic journey, including high school students who are making decisions about university programs and career directions. Early career guidance can be particularly valuable in making informed decisions about higher education and future career paths."
+      question: "What age groups do you serve?",
+      answer: "We primarily serve high school students making career decisions. Our services also benefit university students and young professionals exploring career options."
     },
     {
-      question: "What kind of data do you use for career trend analysis?",
-      answer: "We analyze various data sources including job market reports, salary surveys, industry growth projections, skills demand forecasts, and education outcome statistics. We focus on both local (East African) and global trends to provide comprehensive insights that are relevant whether you plan to work locally or internationally."
+      question: "How current is your career data?",
+      answer: "We update our databases quarterly with the latest labor market trends. Our algorithms incorporate real-time job market shifts and emerging industry demands."
     },
     {
-      question: "Can you help with career changes for working professionals?",
-      answer: "Absolutely! Our services aren't limited to students. We help working professionals who are considering career transitions, looking to advance in their current field, or seeking to pivot to new industries. Our data-driven approach is particularly valuable for professionals who want to make strategic career moves."
+      question: "Do you provide university application support?",
+      answer: "Yes, we offer guidance on selecting suitable programs and preparing applications. Our services include essay reviews and interview preparation for competitive programs."
     },
     {
-      question: "How do I get started with EPIC Careers?",
-      answer: "Getting started is easy! You can reach out through our contact form, call us directly, or send us a WhatsApp message. We'll schedule an initial consultation to understand your needs and recommend the best service package for your situation. You can also start by exploring our free resources and basic assessment tools."
+      question: "Can students access your services individually?",
+      answer: "Absolutely. While we partner with schools, individual students can register directly. Parents can also create accounts for their children to access our resources."
     }
   ];
 
   const categories: Category[] = [
     {
-      title: "Getting Started",
-      description: "New to EPIC? Start here for basic information",
-      questions: [0, 9],
+      title: "General Information",
+      description: "About our organization and services",
+      questions: [0, 5, 9],
       icon: Rocket
     },
     {
-      title: "Services & Pricing",
-      description: "Learn about our offerings and costs",
-      questions: [1, 4, 5],
+      title: "Data & Methodology",
+      description: "How we analyze career information",
+      questions: [1, 7],
       icon: CreditCard
     },
     {
-      title: "Study Abroad & Education",
-      description: "Questions about international education",
-      questions: [2, 6, 7],
+      title: "Study Abroad",
+      description: "International education programs",
+      questions: [2, 3, 8],
       icon: GraduationCap
     },
     {
-      title: "Partnerships & Professional Services",
-      description: "For organizations and working professionals",
-      questions: [3, 8],
+      title: "Access & Eligibility",
+      description: "Who can use our services",
+      questions: [4, 6],
       icon: Building2
     }
   ];
@@ -122,7 +122,8 @@ const FAQ: React.FC = () => {
                     <category.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{category.title}</h3>
-                  <p className="text-sm text-gray-600">{category.questions.length} questions</p>
+                  <p className="text-sm text-gray-600 mb-1">{category.description}</p>
+                  <p className="text-xs text-[#2E7D32]">{category.questions.length} key questions</p>
                 </CardContent>
               </Card>
             ))}
@@ -136,16 +137,16 @@ const FAQ: React.FC = () => {
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <Accordion key={index} type="single" collapsible className="w-full">
-                <AccordionItem value={`item-${index}`} className="border border-gray-200 rounded-lg">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-[#F5F5F5]">
+                <AccordionItem value={`item-${index}`} className="border border-gray-200 rounded-lg hover:border-[#2E7D32] transition-colors">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-[#F5F5F5]/50">
                     <div className="flex items-center gap-4">
                       <div className="w-8 h-8 bg-[#2E7D32] rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-white font-semibold">{index + 1}</span>
+                        <span className="text-white font-semibold text-sm">{index + 1}</span>
                       </div>
                       <span className="text-left font-medium text-gray-900">{faq.question}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 py-4 text-gray-600">
+                  <AccordionContent className="px-6 py-4 text-gray-600 bg-[#F5F5F5]/30">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

@@ -281,15 +281,20 @@ const About: React.FC = () => {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animationType="scale-in" className="py-16 bg-[#2E7D32]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Join Our Mission</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Be part of a movement that's reshaping the future of career guidance.
-          </p>
-          <Button asChild className="bg-white text-[#2E7D32] hover:bg-gray-100 px-8 py-6 text-lg">
-            <Link to="/contact">Contact Us</Link>
-          </Button>
+      <AnimatedSection animationType="scale-in" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2E7D32]/10 via-[#2E7D32]/5 to-[#2E7D32]/10"></div>
+            <div className="relative px-8 py-12 text-center border border-[#2E7D32]/20 rounded-2xl">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Join Our Mission</h2>
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Be part of a movement that's reshaping the future of career guidance.
+              </p>
+              <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </AnimatedSection>
 

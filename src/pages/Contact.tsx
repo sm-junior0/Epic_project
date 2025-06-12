@@ -217,32 +217,29 @@ const Contact: React.FC = () => {
 
 const faqs = [
   {
-    question: "What services do you offer?",
-    answer:
-      "We offer personalized career guidance, job search assistance, and interview preparation.",
+    question: "What makes EPIC different from other career services?",
+    answer: "We combine personality assessments with real-time labor market data to provide guidance that's both personally fulfilling and strategically sound."
   },
   {
-    question: "How long is the typical career coaching session?",
-    answer: "Sessions typically last between 30 minutes to 1 hour.",
+    question: "How does your career guidance process work?",
+    answer: "Our Define-Deepen-Strengthen approach includes assessment, market analysis, and ongoing support - typically completed in 4-6 weeks."
   },
   {
-    question: "Do you provide career coaching for international students?",
-    answer: "Yes, we have experience working with international students.",
+    question: "Do you help with study abroad programs?",
+    answer: "Yes, we identify ideal international programs and provide application strategy, though we don't process applications directly."
   },
   {
-    question: "What is your return policy?",
-    answer:
-      "We offer a 30-day money-back guarantee if you're not satisfied with our services.",
+    question: "Is there a cost for your services?",
+    answer: "Basic assessments are free, while premium services like personalized consultations have associated fees."
   },
   {
-    question: "How do I know if I'm a good fit for your services?",
-    answer:
-      "We assess your career goals, skills, and experience to determine if our services are a good fit.",
+    question: "Can professionals use your services too?",
+    answer: "Absolutely, we help with career changes, advancements, and pivots using our data-driven approach."
   },
   {
-    question: "Can I get a discount if I refer a friend?",
-    answer: "Yes, we offer referral discounts.",
-  },
+    question: "How do I get started with EPIC?",
+    answer: "Begin with our free resources or contact us for an initial consultation to discuss your needs."
+  }
 ];
 
 export default Contact;

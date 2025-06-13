@@ -25,10 +25,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src={EpicLogo} 
-              alt="EPIC Careers Logo" 
-              className="h-10 w-auto"
+            <img
+              src={EpicLogo}
+              alt="EPIC Careers Logo"
+              className="h-16 w-auto"
             />
           </Link>
 
@@ -38,9 +38,8 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-[#2E7D32] ${
-                  isActive(item.href) ? "text-[#2E7D32]" : "text-gray-700"
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-[#2E7D32] ${isActive(item.href) ? "text-[#2E7D32]" : "text-gray-700"
+                  }`}
               >
                 {item.label}
               </Link>
@@ -71,11 +70,10 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    isActive(item.href)
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(item.href)
                       ? "text-[#2E7D32] bg-[#F5F5F5]"
                       : "text-gray-700 hover:text-[#2E7D32] hover:bg-[#F5F5F5]"
-                  }`}
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

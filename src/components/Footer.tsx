@@ -20,16 +20,10 @@ const Footer = () => {
               Empowering students to make informed career decisions through data-driven insights and personalized guidance.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
+              <a title="Instagram" href="https://www.instagram.com/epic.careers/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
+              <a title="linkedIn" href="https://linkedin.com/company/epicareersrwanda" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>

@@ -288,11 +288,11 @@ const About: React.FC = () => {
             <div className="relative px-8 py-12 text-center border border-[#2E7D32]/20 rounded-2xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Join Our Mission</h2>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Be part of a movement that's reshaping the future of career guidance.
-              </p>
+            Be part of a movement that's reshaping the future of career guidance.
+          </p>
               <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
-                <Link to="/contact">Contact Us</Link>
-              </Button>
+            <Link to="/contact">Contact Us</Link>
+          </Button>
             </div>
           </div>
         </div>

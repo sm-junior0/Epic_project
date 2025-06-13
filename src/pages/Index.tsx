@@ -35,10 +35,10 @@ const Index: React.FC = () => {
             Empowering students with data-driven insights and personalized career guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
+              <Button asChild size="lg" className="bg-[#2E7D32] text-white hover:bg-[#1B5E20] transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Link to="/services">Explore Services</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-[#2E7D32] text-[#2E7D32] hover:bg-[#F5F5F5]">
+              <Button asChild size="lg" variant="outline" className="border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32] hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -151,10 +151,10 @@ const Index: React.FC = () => {
               Take the first step toward your dream career with EPIC's free and personalized guidance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white">
+                <Button asChild size="lg" className="bg-[#2E7D32] text-white hover:bg-[#1B5E20] transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   <Link to="/services">Get Started</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-[#2E7D32] text-[#2E7D32] hover:bg-[#F5F5F5]">
+                <Button asChild size="lg" variant="outline" className="border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32] hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>

@@ -124,9 +124,10 @@ const Contact: React.FC = () => {
                           href="https://www.linkedin.com/company/epicareersrwanda/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[#2E7D32] hover:underline"
+                          className="text-[#2E7D32] hover:underline break-words sm:break-normal max-w-[200px] sm:max-w-none inline-block"
                         >
-                          linkedin.com/company/epicareersrwanda
+                          <span className="hidden sm:inline">linkedin.com/company/epicareersrwanda</span>
+                          <span className="sm:hidden">EPIC Careers Rwanda</span>
                         </a>
                       </div>
                     </div>

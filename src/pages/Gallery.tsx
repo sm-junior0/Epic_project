@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimatedSection from "@/components/AnimatedSection";
 
+
 // Import all gallery images
 import img01 from "@/assets/gallery/01.jpg";
 import img02 from "@/assets/gallery/02.jpg";

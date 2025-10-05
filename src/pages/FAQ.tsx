@@ -14,6 +14,8 @@ interface Category {
   icon: LucideIcon;
 }
 
+
+
 const FAQ: React.FC = () => {
   const faqs = [
     {
